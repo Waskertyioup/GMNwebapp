@@ -1,0 +1,174 @@
+{
+
+  "navbar0": "Consultores expertos",
+
+  "navbar1": "Inicio",
+  "navbar2": "¿Quiénes somos?",
+  "navbar3": "¿Qué hacemos?",
+  "navbar4": "Casos de éxito",
+  "navbar5": "Filosofía",
+  "navbar6": "Contacto",
+
+
+
+  "header_title1": "Juntos",
+  "header_title2": "Transformamos",
+  "header_subtitle": "Especializados en Gestión de Activos Físicos con más de 20 años de experiencia, \ntransformando operaciones industriales a través de soluciones innovadoras y tecnología de vanguardia.",
+  
+
+
+
+  "overview": {
+    "title": "GMN en 2025",
+    "subtitle": "\"Solo en este año, GMN ha ayudado a las empresas a ahorrar más de --- millones de dólares.\"",
+    "1st": "Valor creado por GMN",
+    "1st_par": "Para un total de más de --- proyectos, para ---+ clientes:",
+    "card1": "$200",
+    "card1_sub": "MILLONES",
+    "card2": "",
+    "card2_sub": "reducción de costos",
+    "card3": "24%",
+    "card3_sub": "más eficiencia"
+  },
+
+
+  "news": {
+    "title": "Noticias",
+    "1st": "Sobre la baja de productividad",
+    "1st_par": "Sergio Adauy, director ejecutivo de la empresa local de Antofagasta, GMN, en relación a los desafíos que enfrenta la industria minera en términos de competitividad. Este tema ha cobrado relevancia en medio del aumento de los costos de producción, así como otros factores externos como la disminución de la calidad de los minerales y la escasez de recursos hídricos. Sergio Adauy, director ejecutivo de la empresa local de Antofagasta, GMN, en relación a los desafíos que enfrenta la industria minera en términos de competitividad. Este tema ha cobrado relevancia en medio del aumento de los costos de producción, así como otros factores externos como la disminución de la calidad de los minerales y la escasez de recursos hídricos.",
+    "2nd": "Innovacion",
+    "2nd_par": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "3rd": "Montos",
+    "3rd_par": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+
+
+
+  "somos": {
+    "title": "¿Quiénes somos?",
+    "intro": "Introducción",
+    "intro_par": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "vision": "Visión",
+    "vision_par": "Ser líderes globales en consultoría de Gestión de Activos Físicos, impulsados por equipos de alto desempeño que contribuyan al desarrollo y éxito constante de nuestros clientes.",
+    "mision": "Misión",
+    "mision_par": "Brindar soluciones oportunas y eficaces a los problemas de competitividad y sustentabilidad de nuestros clientes, aumentando su Valor Económico Agregado (EVA) a través de un crecimiento sostenible."
+  },
+
+
+    "somos2": {
+    "title": "Equipo Directivo",
+    "intro": "Introducción",
+    "intro_par": "\"Desde nuestros inicios, mantenemos la misma convicción: hacer que las cosas pasen.\""
+
+
+  },
+
+  "hacemos": {
+    "title": "¿Qué hacemos?",
+    "intro": "\"Transformamos operaciones tomando tus desafíos como propios.\"",
+    "intro_par1": "Acompañamos a organizaciones intensivas en capital a elevar su desempeño mediante soluciones de mejora operacional, gestión de activos y maximización de productividad. Nuestro modelo, validado en minería, energía, manufactura, forestal, alimentos y bebidas, logística, aeronáutica, agricultura y acuicultura, combina diagnóstico experto, implementación rigurosa y adopción sostenible.",
+    "intro_par2": "Operamos en toda Latinoamérica, apoyando a las compañías con metodologías propias, innovación aplicada e integración tecnológica que impulsa decisiones en tiempo real."
+
+  },
+
+
+
+  "servicios": {
+    "title": "Nuestros Servicios",
+    "service1": "Maximización de Producción",
+    "service1_par1": "Impulsamos el rendimiento operacional asegurando que los activos críticos cumplan y superen los niveles de producción para los cuales fueron diseñados.",
+    "service1_par2": " Aplicamos metodologías avanzadas de confiabilidad para diagnosticar el comportamiento real de los equipos, identificar restricciones sistémicas y eliminar fallas que afectan la continuidad operacional. Nuestro análisis va desde la cadena completa de valor hasta la intervención puntual en cada activo, permitiendo alcanzar niveles superiores de disponibilidad y rendimiento.",
+    "service1_par3": "El impacto es directo: más toneladas procesadas, ciclos operacionales más estables y una operación alineada a la producción meta con precisión técnica y disciplina operacional.",
+
+    "service2": "Reducción de costos",
+    "service2_par1": "Convertimos ineficiencias invisibles en ahorros concretos.",
+    "service2_par2": "Reducimos los costos operacionales mediante la identificación de ineficiencias estructurales y la optimización de los recursos clave del negocio. Nuestra metodología propia de optimización de inventarios permite recuperar activos que ya no generan retorno, eliminar sobrestock histórico y ordenar procesos que hoy generan pérdidas silenciosas. Complementamos esto con estrategias de mantenimiento diseñadas para evitar fallas costosas y maximizar la vida útil de cada equipo.",
+    "service2_par3": "El resultado es una estructura de costos más competitiva, con decisiones sustentadas en datos y un control financiero operacional que impacta directamente la rentabilidad del negocio",
+
+    "service3": "Innovación",
+    "service3_par1": " Llevamos a nuestros clientes a un nivel superior de gestión mediante soluciones digitales que integran datos, inteligencia artificial y automatización. Desarrollamos asistentes virtuales capaces de entregar insights operacionales en tiempo real, detectando desviaciones y proponiendo acciones inmediatas basadas en modelos analíticos. Integramos SAP, Power BI y diversas fuentes de información para disponibilizar datos críticos",
+    "service3_par2": " Esto habilita la toma de decisiones instantánea para ejecutivos y equipos operacionales, elevando la eficiencia, la agilidad y la predictibilidad de toda la operación.",
+    
+
+    "service4": "Servicios en Terreno, Coaching y Gestión del Cambio",
+    "service4_par1": "Consultores \"hands on\" que trabajan codo a codo con los equipos del cliente, entregando soporte operativo, capacitación y aseguramiento de calidad para que cada mejora se implemente, se adopte y perdure en el tiempo.",
+    "service4_par2": "No observamos: acompañamos, ejecutamos y transferimos conocimiento."
+
+  },
+
+
+    "logros": {
+    "title": "Casos de éxito",
+    "logro1": "Eficiencia de costos",
+    "logro1_par1": "...",
+    "logro1_par2": "...",
+
+    "logro2": "Maximización de producción",
+    "logro2_par1": "...",
+    "logro2_par2": "...",
+
+    "logro3": "Innovación",
+    "logro3_par1": "...",
+    "logro3_par2": "...."
+
+  },
+
+
+
+    "filosofia": {
+    "title": "Filosofía",
+
+    "filo1": "Frase inicial",
+    "filo1_par1": "\"NOS INVOLUCRAMOS CON TUS DESAFÍOS COMO SI FUERAN PROPIOS, ACOMPAÑÁNDOTE CON COMPROMISO Y RESULTADOS SOSTENIBLES.\"",
+
+    "filo2": "Cultura empresarial",
+    "filo2_par1": "Nuestra cultura empresarial se basa en relaciones de largo plazo construidas sobre confianza, excelencia técnica, operacional y resultados comprobables. Trabajamos junto a nuestros clientes como un equipo integrado, combinando conocimiento especializado, disciplina y una ejecución rigurosa que asegura avances sostenibles. Promovemos el aprendizaje continuo, altos estándares de seguridad y una gestión responsable hacia las personas y el entorno.",
+    "filo2_par2": "Este modelo de trabajo nos permite diagnosticar con precisión, anticipar riesgos y diseñar soluciones de alto impacto que elevan la productividad y la eficiencia. No solo entregamos consultoría: aseguramos implementación real, adopción efectiva y resultados que perduran",
+
+    "filo3": "Certificaciones y estándares",
+    "filo3_par1": "GMN es una empresa Trinorma, certificada bajo estándares internacionales:",
+    "filo3_par1_l1": "ISO 9001:2015 – Gestión de calidad",
+    "filo3_par1_l2": "ISO 14001:2015 – Gestión ambiental",
+    "filo3_par1_l3": "ISO 45001:2018 – Seguridad y salud ocupacional",
+    "filo3_par2": "Estas certificaciones respaldan nuestro compromiso con la mejora continua, la sostenibilidad y el bienestar de nuestro equipo y entorno.",
+
+
+
+    "filo4": "Excelencia técnica y humana",
+    "filo4_par1": "Nuestro valor está en las personas; consultores con experiencia comprobada que hacen que las cosas pasen.",
+
+    "filo4_btn": "Conócenos más"
+
+  },
+  
+  "contact": {
+    "title": "Contacto",
+    "intro": "Déjanos tus datos y te contactaremos a la brevedad.",
+    "name": "Nombre:",
+    "company": "Empresa:",
+    "email": "Correo:",
+    "phone": "Teléfono (opcional):",
+    "country": "País",
+    "details": "Descripción del requerimiento:",
+    "specialist": "Deseo agendar una reunión con un especialista",
+    "sent": "Enviar",
+    "confirmation": "¡Gracias! Tu mensaje ha sido enviado correctamente."
+  },
+
+  "trabaja": {
+    "title": "Únete",
+    "intro": "Déjanos tus datos y te contactaremos a la brevedad.",
+    "name": "Nombre:",
+    "company": "Empresa:",
+    "email": "Correo:",
+    "phone": "Teléfono (opcional):",
+    "country": "País",
+    "details": "Descripción del requerimiento:",
+    "specialist": "Deseo agendar una reunión con un especialista",
+    "sent": "Enviar",
+    "confirmation": "¡Gracias! Tu mensaje ha sido enviado correctamente."
+  }
+
+
+
+}

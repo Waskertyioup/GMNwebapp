@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Scroll</title>
+  <link rel="stylesheet" href="./styles.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="./script.js" defer></script>
+</head>
+<body>
+
+
+<header id="navbar">
+  <div class="navbar-container">
+
+    <!-- Left: Logo -->
+    <div class="navbar-logo">
+      <img src="images/logo.png" alt="GMN Group Logo">
+      <div class="navbar-logo-text">
+        <h1>GMN Group</h1>
+        <span><p5 data-key="navbar0"></p5></span>
+      </div>
+    </div>
+
+    <!-- Center: Navigation -->
+    <nav class="navbar-nav">
+      <ul>
+        <li><a href="#inicio"><p5 data-key="navbar1"></p5></a></li>
+        <li><a href="#overview"><p5 data-key="overview.title"></p5></a></li>
+        <li><a href="#news"><p5 data-key="news.title"></p5></a></li>
+        <li><a href="#quienes"><p5 data-key="navbar2"></p5></a></li>
+        <li><a href="#quehacemos-intro"><p5 data-key="navbar3"></p5></a></li>
+        <li><a href="#logros"><p5 data-key="navbar4"></p5></a></li>
+        <li><a href="#filosofia"><p5 data-key="navbar5"></p5></a></li>
+        <li><a href="#contacto"><p5 data-key="navbar6"></p5></a></li>
+      </ul>
+    </nav>
+
+    <!-- Right: Language & Toggle -->
+    <div class="navbar-right">
+      <button class="navbar-toggle" aria-label="Toggle navigation">☰</button>
+      <div class="navbar-lang">
+        <img src="images/world_icon.png" alt="Idioma" class="lang-icon">
+        <select id="language-selector">
+          <option value="esp" selected>ESP</option>
+          <option value="eng">ENG</option>
+          <option value="prt">PRT</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+
+
+
+
+  
+
+<section id="inicio" class="slide hero">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="/videos/Portada.mp4" type="video/mp4">
+  </video>
+
+  <div class="overlay">
+    <h1><p5 data-key="header_title1"></p5></h1>
+    <h1><span class="highlight-orange"><p5 data-key="header_title2"></p5></span></h1>
+    <p1><p5 data-key="header_subtitle"></p5></p1>
+  </div>
+</section>
+
+
+
+
+
+  
+
+
+
+  <section id="overview" class="slide">
+
+    <div class="margener">
+
+      <h2><span class="highlight-orange"><p5 data-key="overview.title"></p5></span></h2>
+
+      <p style="font-style: italic;"><p5 data-key="overview.subtitle"></p5></p>
+
+      <h3><span class="highlight-orange"><p5 data-key="overview.1st"></p5></span></h3>
+        <p><p5 data-key="overview.1st_par"></p5></p>
+
+
+
+      <!-- <h3><span class="highlight-orange"><p5 data-key="overview.2nd"></p5></span></h3>
+        <p><p5 data-key="overview.2nd_par"></p5></p>
+      <h3><span class="highlight-orange"><p5 data-key="overview.3rd"></p5></span></h3>
+        <p><p5 data-key="overview.3rd_par"></p5></p> -->
+      <div class="cards-container2">
+        <div class="card2">
+          <img src="images/icono1.png" alt="Feature 1">
+          <h3 class="card2-title"><p5 data-key="overview.card1"></p5></h3>
+          <p class="card2-subtitle"><p5 data-key="overview.card1_sub"></p5></p>
+        </div>
+        
+        <div class="card2">
+          <img src="images/icono2.png" alt="Feature 2">
+          <h3 class="card2-title"><p5 data-key="overview.card2"></p5></h3>
+          <p class="card2-subtitle"><p5 data-key="overview.card2_sub"></p5></p>
+        </div>
+        
+        <div class="card2">
+          <img src="images/icono3.png" alt="Feature 3">
+          <h3 class="card2-title"><p5 data-key="overview.card3"></p5></h3>
+          <p class="card2-subtitle"><p5 data-key="overview.card3_sub"></p5></p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+  <section id="news" class="slide">
+
+    <div class="margener">
+
+    <h2><span class="highlight-orange"><p5 data-key="news.title"></p5></span></h2>
+
+    <!-- FIRST BLOCK = VIDEO -->
+    <div class="news-block">
+      <div class="news-text">
+        <h3><p5 data-key="news.1st"></p5></h3>
+        <p><p5 data-key="news.1st_par"></p5></p>
+      </div>
+      <div class="news-media large-media">
+        <iframe 
+          src="https://www.youtube.com/embed/mJaABkvlWUo" 
+          title="YouTube video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- SECOND BLOCK -->
+    <div class="news-block">
+      <div class="news-text">
+        <h3><p5 data-key="news.2nd"></p5></h3>
+        <p><p5 data-key="news.2nd_par"></p5></p>
+      </div>
+      <div class="news-media medium-media">
+        <img src="https://picsum.photos/400/600?2" alt="News Image 2">
+      </div>
+    </div>
+
+    <!-- THIRD BLOCK -->
+    <div class="news-block">
+      <div class="news-text">
+        <h3><p5 data-key="news.3rd"></p5></h3>
+        <p><p5 data-key="news.3rd_par"></p5></p>
+      </div>
+      <div class="news-media small-media">
+        <img src="https://picsum.photos/400/600?3" alt="News Image 3">
+      </div>
+    </div>
+
+
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+  <section id="quienes" class="slide">
+
+    <div class="margener">
+
+
+      <h2><span class="highlight-orange"><p5 data-key="somos.title"></p5></span></h2>
+      <h3><p5 data-key="somos.intro"></p5></h3>
+        <p><p5 data-key="somos.intro_par"></p5></p>
+
+
+      <div class="video-container">
+        <video src="videos/GMN_Imagina.mp4" controls></video>
+      </div>
+
+
+      <h3><p5 data-key="somos.vision"></p5></h3>
+        <p><p5 data-key="somos.vision_par"></p5></p>
+      <h3><p5 data-key="somos.mision"></p5></h3>
+        <p><p5 data-key="somos.mision_par"></p5></p>
+
+    </div>
+
+
+  </section>
+
+
+
+
+
+
+  
+<section id="quienes" class="slide notop">
+
+  <div class="margener">
+
+  <h2><span class="highlight-orange"><p5 data-key="somos2.title"></p5></span></h2>
+
+  <div class="team-carousel">
+
+
+      <div class="team-card">
+        <img src="https://picsum.photos/400/400?1" alt="Sergio Adauy">
+        <h3>Sergio Adauy</h3>
+        <p class="role">Managing Director</p>
+        <p class="summary">Con casi tres décadas dedicadas al desarrollo de proyectos en estrategia, excelencia operacional y mejora continua, se ha enfocado en la Gestión de Activos y la cadena de suministro. </p>
+        <a href="https://www.linkedin.com/in/sergio-adauy-b8407524/" target="_blank" class="linkedin-link">LinkedIn →</a>
+      </div>
+
+      <div class="team-card">
+        <img src="https://picsum.photos/400/400?2" alt="Marcelo Morales">
+        <h3>Marcelo Morales</h3>
+        <p class="role">Gerente General GMN</p>
+        <p class="summary">Profesional con más de 13 años de experiencia en empresas nacionales y multinacionales de la industria minera.</p>
+        <a href="https://www.linkedin.com/in/marcelo-morales-millar-a2b368126/" target="_blank" class="linkedin-link">LinkedIn →</a>
+      </div>
+
+     
+
+
+  </div>
+
+  <p style="text-align: center !important; font-style: italic;"><p5 data-key="somos2.intro_par"></p5></p>
+
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- FIRST PART: Text + 2 stacked images -->
+<section id="quehacemos-intro" class="slide">
+
+  <div class="margener">
+
+    
+  <h2><span class="highlight-orange"><p5 data-key="hacemos.title"></p5></span></h2>
+  
+
+  <div class="quehacemos-content">
+    <div class="text-column">
+      <p>
+        <p5 style="font-style: italic;" data-key="hacemos.intro"></p5>
+        <br><br>
+        <p5 data-key="hacemos.intro_par1"></p5>
+        <br><br>
+        <p5 data-key="hacemos.intro_par2"></p5>
+      </p>
+    </div>
+
+    <div class="image-column">
+      <img src="https://picsum.photos/400/200?5" alt="Certificación 1">
+      <img src="https://picsum.photos/400/200?6" alt="Certificación 2">
+    </div>
+  </div>
+
+
+  </div>
+
+
+</section>
+
+
+<!-- SECOND PART: 4 service columns -->
+<section id="quehacemos-servicios" class="slide notop">
+
+
+  <div class="margener">
+
+
+  <div class="servicios-grid">
+    <div class="servicio">
+      <h3><p5 data-key="servicios.service1"></p5></h3>
+      <p><p5 data-key="servicios.service1_par1"></p5>
+        <br><br>
+        <p5 data-key="servicios.service1_par2"></p5>
+        <br><br>
+        <p5 data-key="servicios.service1_par3"></p5>
+      </p>
+    </div>
+    <div class="servicio">
+      <h3><p5 data-key="servicios.service2"></p5></h3>
+      <p><p5 data-key="servicios.service2_par1"></p5>
+        <br><br>
+        <p5 data-key="servicios.service2_par2"></p5>
+        <br><br>
+        <p5 data-key="servicios.service2_par3"></p5>
+      </p>
+    </div>
+    <div class="servicio">
+      <h3><p5 data-key="servicios.service3"></p5></h3>
+      <p><p5 data-key="servicios.service3_par1"></p5>
+        <br><br>
+        <p5 data-key="servicios.service3_par2"></p5>
+      </p>
+    </div>
+    <!-- <div class="servicio">
+      <h3><p5 data-key="servicios.service4"></p5></h3>
+      <p><p5 data-key="servicios.service4_par1"></p5>
+        <br><br>
+        <p5 data-key="servicios.service4_par2"></p5>
+    </p>
+    </div> -->
+  </div>
+
+
+  </div>
+
+  
+</section>
+
+
+
+
+
+
+
+
+<!-- LOGROS -->
+<section id="logros" class="slide">
+
+  <div class="margener">
+
+
+  <h2><span class="highlight-orange"><p5 data-key="logros.title"></p5></span></h2>
+  <h3><p5 data-key="logros.logro1"></p5></h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <h3><p5 data-key="logros.logro2"></p5></h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <h3><p5 data-key="logros.logro3"></p5></h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+  <!-- <div class="carousel-container">
+    <button class="carousel-btn prev">‹</button>
+    <div class="carousel-track">
+      <div class="card"><img src="images/codelco.png" alt=""><h4>Codelco</h4></div>
+      <div class="card"><img src="images/glencore.png" alt=""><h4>Glencore</h4></div>
+      <div class="card"><img src="images/antapaccay.png" alt=""><h4>Antapaccay</h4></div>
+      <div class="card"><img src="images/Cerro matoso.png" alt=""><h4>Cerro Matoso</h4></div>
+      <div class="card"><img src="images/sierra gorda.png" alt=""><h4>Sierra Gorda</h4></div>
+      <div class="card"><img src="images/bhp.png" alt=""><h4>BHP</h4></div>
+      <div class="card"><img src="images/cocacola.png" alt=""><h4>Coca-Cola Embonor</h4></div>
+      <div class="card"><img src="images/spence.png" alt=""><h4>Spence</h4></div>
+    </div>
+    <button class="carousel-btn next">›</button>
+  </div> -->
+
+
+    <div class="carousel-container">
+        <!-- Main Display -->
+        <div class="main-display">
+            <img src="images/bhp2.png" alt="BHP" class="main-image" id="mainImage">
+            <div class="overlay-content">
+                <h2 class="overlay-title" id="mainTitle">BHP</h2>
+                <p class="overlay-description" id="mainDescription">Global mining and metals company focusing on resources</p>
+            </div>
+            
+            <!-- Navigation Buttons -->
+            <button class="nav-btn prev-btn" id="prevBtn">❮</button>
+            <button class="nav-btn next-btn" id="nextBtn">❯</button>
+        </div>
+        
+        <!-- Thumbnail Carousel -->
+        <div class="thumbnail-container">
+            <div class="thumbnail-track" id="thumbnailTrack">
+                <!-- Thumbnails will be generated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- FILOSOFÍA: stacked accordion (place this where your Filosofía section goes) -->
+<section id="filosofia" class="slide">
+
+  <div class="margener">
+
+
+  <h2><span class="highlight-orange"><p5 data-key="filosofia.title"></p5></span></h2>
+  <div class="accordion">
+    <div class="accordion-item active">
+      <button class="accordion-header" aria-expanded="true"><p5 data-key="filosofia.filo1"></p5></button>
+      <div class="accordion-panel">
+        <div class="accordion-text">
+          <p style="text-align: center !important; font-style: italic;"><p5 data-key="filosofia.filo1_par1"></p5></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false"><p5 data-key="filosofia.filo2"></p5></button>
+      <div class="accordion-panel">
+        <div class="accordion-text">
+          <p><p5 data-key="filosofia.filo2_par1"></p5>
+              <br>
+            <p5 data-key="filosofia.filo2_par2"></p5>
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false">
+        <p5 data-key="filosofia.filo3"></p5>
+      </button>
+
+      <!-- Replace ONLY the panel below -->
+      <div class="accordion-panel">
+        <div class="accordion-content">
+          <div class="accordion-text">
+            <p>
+              <p5 data-key="filosofia.filo3_par1"></p5>
+            </p>
+
+            <ul>
+              <li><p5 data-key="filosofia.filo3_par1_l1"></p5></li>
+              <li><p5 data-key="filosofia.filo3_par1_l2"></p5></li>
+              <li><p5 data-key="filosofia.filo3_par1_l3"></p5></li>
+            </ul>
+
+            <p>
+              <p5 data-key="filosofia.filo3_par2"></p5>
+            </p>
+          </div>
+
+          <div class="accordion-image">
+            <img
+              src="images/iso_certificaciones.png"
+              alt="Certificaciones ISO 9001, 14001 y 45001"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false"><p5 data-key="filosofia.filo4"></p5></button>
+      <div class="accordion-panel">
+
+        
+        <div class="accordion-text quehacemos-content">
+
+          <div class="text-column">            
+            <p><p5 data-key="filosofia.filo4_par1"></p5></p>
+
+            <div style="text-align: center;">
+                <a href="https://linkedin.com" target="_blank" class="linkedin-link">
+                    <span data-key="filosofia.filo4_btn">Connect on LinkedIn</span>
+                </a>
+            </div>
+
+          </div>
+
+          <div class="image-column">
+            <img src="https://picsum.photos/400/200?5" alt="Certificación 1">
+          </div>
+
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+
+<!-- CONTACTO -->
+<section id="contacto" class="slide">
+
+  <div class="margener">
+
+
+
+  <h2><span class="highlight-orange"><p5 data-key="contact.title"></p5></span></h2>
+  <p><p5 data-key="contact.intro"></p5></p>
+
+  <form id="contact-form">
+    
+    <div class="form-group">
+    <label><p5 data-key="contact.name"></p5></label>
+    <input type="text" name="nombre" required>
+    </div>
+
+    <div class="form-group">
+    <label><p5 data-key="contact.company"></p5></label>
+    <input type="text" name="empresa" required>
+    </div>
+
+    <div class="form-group">
+    <label><p5 data-key="contact.email"></p5></label>
+    <input type="email" name="correo" required>
+    </div>
+
+    <div class="form-group">
+    <label><p5 data-key="contact.phone"></p5></label>
+    <input type="text" name="telefono">
+    </div>
+
+    <div class="form-group">
+    <label><p5 data-key="contact.country"></p5></label>
+    <input type="text" name="pais" required>
+    </div>
+
+    <div class="form-group">
+      <label for="requerimiento"><p5 data-key="contact.details"></p5></label>
+      <textarea 
+        id="requerimiento" 
+        name="requerimiento" 
+        rows="4" 
+        cols="50" 
+        required
+        placeholder="Describe tu requerimiento aquí..."
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+    <label>
+      <input type="checkbox" name="reunion">
+      <p5 data-key="contact.specialist"></p5>
+    </label>
+    </div>
+
+    <div class="form-group">
+    <button type="submit" class="btn-send"><p5 data-key="contact.sent"></p5></button>
+    </div>
+  </form>
+
+  </div>
+
+
+</section>
+
+
+
+
+
+<!-- Modal de confirmación -->
+<div id="confirmation-modal" class="modal">
+  <div class="modal-content">
+    <p><p5 data-key="contact.confirmation"></p5></p>
+    <button id="close-modal">Cerrar</button>
+  </div>
+</div>
+
+
+
+<!-- TRABAJA -->
+<section id="trabaja" class="slide">
+
+  <div class="margener">
+
+
+
+  <h2><span class="highlight-orange"><p5 data-key="trabaja.title"></p5></span></h2>
+  <p><p5 data-key="trabaja.intro"></p5></p>
+
+  <form id="join-form">
+    
+    <div class="form-group">
+    <label><p5 data-key="trabaja.name"></p5></label>
+    <input type="text" name="nombre" required>
+    </div>
+
+    <div class="form-group">
+    <label><p5 data-key="trabaja.company"></p5></label>
+    <input type="text" name="empresa" required>
+    </div>
+
+    <div class="form-group">
+    <label><p5 data-key="trabaja.email"></p5></label>
+    <input type="email" name="correo" required>
+    </div>
+
+    <div class="form-group">
+    <label><p5 data-key="trabaja.phone"></p5></label>
+    <input type="text" name="telefono">
+    </div>
+
+    <div class="form-group">
+    <label><p5 data-key="trabaja.country"></p5></label>
+    <input type="text" name="pais" required>
+    </div>
+
+    <div class="form-group">
+      <label for="requerimiento"><p5 data-key="trabaja.details"></p5></label>
+      <textarea 
+        id="requerimiento" 
+        name="requerimiento" 
+        rows="4" 
+        cols="50" 
+        required
+        placeholder="Describe tu requerimiento aquí..."
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+    <label>
+      <input type="checkbox" name="reunion">
+      <p5 data-key="trabaja.specialist"></p5>
+    </label>
+    </div>
+
+    <div class="form-group">
+    <button type="submit" class="btn-send"><p5 data-key="trabaja.sent"></p5></button>
+    </div>
+  </form>
+
+
+  </div>
+
+
+  
+</section>
+
+<!-- Modal de confirmación -->
+<div id="join-confirmation-modal" class="modal">
+  <div class="modal-content">
+    <p><p5 data-key="trabaja.confirmation"></p5></p>
+    <button id="join-close-modal">Cerrar</button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer id="footer" class="footer">
+    <div class="footer-content">
+      <p>© 2025 GMN Group. All rights reserved.</p>
+      <div class="socials">
+        <a href="#"><span class="highlight-orange">LinkedIn</span></a> |
+        <a href="#"><span class="highlight-orange">Twitter</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

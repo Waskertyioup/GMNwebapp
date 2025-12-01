@@ -1,0 +1,165 @@
+{
+
+  "navbar0": "Consultores expertos",
+  
+  "navbar1": "Home",
+  "navbar2": "About us",
+  "navbar3": "Our job",
+  "navbar4": "Results",
+  "navbar5": "Philosopy",
+  "navbar6": "Contact us",
+
+  
+  
+
+  "header_title1": "Together",
+  "header_title2": "We transform",
+  "header_subtitle": "Specialized in Physical Asset Management with over 20 years of experience, transforming industrial operations through innovative solutions and cutting-edge technology.",
+
+
+
+  "overview": {
+    "title": "Highlights",
+    "1st": "Production",
+    "1st_par": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "2nd": "Innovation",
+    "2nd_par": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "3rd": "Cashflow",
+    "3rd_par": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+
+
+  "news": {
+    "title": "News",
+    "1st": "About low productivity",
+    "1st_par": "Sergio Adauy, CEO of the local company in Antofagasta, GMN, regarding the challenges faced by the mining industry in terms of competitiveness. This topic has gained relevance amidst rising production costs, as well as other external factors such as the decline in mineral quality and the scarcity of water resources. Sergio Adauy, CEO of the local company in Antofagasta, GMN, regarding the challenges faced by the mining industry in terms of competitiveness. This topic has gained relevance amidst rising production costs, as well as other external factors such as the decline in mineral quality and the scarcity of water resources.",
+    "2nd": "Innovation",
+    "2nd_par": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "3rd": "Cashflow",
+    "3rd_par": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+
+
+
+  "somos": {
+    "title": "About Us",
+    "intro": "Introduction",
+    "intro_par": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "vision": "Vision",
+    "vision_par": "Ser líderes globales en consultoría de Gestión de Activos Físicos, impulsados por equipos de alto desempeño que contribuyan al desarrollo y éxito constante de nuestros clientes.",
+    "mision": "Mision",
+    "mision_par": "Brindar soluciones oportunas y eficaces a los problemas de competitividad y sustentabilidad de nuestros clientes, aumentando su Valor Económico Agregado (EVA) a través de un crecimiento sostenible."
+  },
+
+
+    "somos2": {
+    "title": "Lead Team",
+    "intro": "Introduction",
+    "intro_par": "\"Since our beginnings, we have maintained the same conviction: making things happen.\""
+
+
+  },
+
+  "hacemos": {
+    "title": "Our Job",
+    "intro": "",
+    "intro_par1": "Transformamos mantenimiento, datos y experiencia en valor operacional. En GMN - Global Maintenance Network, ayudamos a empresas de minería, energía, petróleo y otras industrias intensivas en capital a mejorar la confiabilidad, reducir costos unitarios y maximizar la disponibilidad de sus activos físicos.",
+    "intro_par2": "Lo hacemos combinando experiencia en terreno, metodología de clase mundial y tecnología aplicada para entregar resultados medibles y sostenibles."
+
+
+  },
+
+
+
+  "servicios": {
+    "title": "Nuestros Servicios",
+    "service1": "Gestión de Activos y Confiabilidad",
+    "service1_par1": "Implementamos estrategias de mantenimiento centradas en la confiabilidad (RCM), asegurando que cada intervencion aporte valor real al negocio.",
+    "service1_par2": "Menos fallas, más disponibilidad, decisiones basadas en datos.",
+
+    "service2": "Optimización SAP PM / GSAP",
+    "service2_par1": "Diseñamos, configuramos y optimizamos plataformas SAP PM / EAM para alinear procesos técnicos con objetivos operacionales.",
+    "service2_par2": "Integramos personas, procesos y tecnología con visión de negocio.",
+
+    "service3": "Análitica y Business Intelligence",
+    "service3_par1": "Desarrollamos dashboards y modelos de análisis que transforman datos en decisiones.",
+    "service3_par2": "Usamos Python, Power BI y metodologías SAP para visibilizar desempeño, backlog y costos en tiempo real.",
+    "service3_par3": "De la data al valor: cada KPI cuenta una historia.",
+
+    "service4": "Servicios en Terreno, Coaching y Gestión del Cambio",
+    "service4_par1": "Consultores \"hands on\" que trabajan codo a codo con los equipos del cliente, entregando soporte operativo, capacitación y aseguramiento de calidad para que cada mejora se implemente, se adopte y perdure en el tiempo.",
+    "service4_par2": "No observamos: acompañamos, ejecutamos y transferimos conocimiento."
+
+  },
+
+
+    "logros": {
+    "title": "Casos de éxito",
+    "logro1": "Eficiencia de costos",
+    "logro1_par1": "...",
+    "logro1_par2": "...",
+
+    "logro2": "Maximización de producción",
+    "logro2_par1": "...",
+    "logro2_par2": "...",
+
+    "logro3": "Innovación",
+    "logro3_par1": "...",
+    "logro3_par2": "...."
+
+  },
+
+
+
+    "filosofia": {
+    "title": "Filosofía",
+
+    "filo1": "Frase inicial",
+    "filo1_par1": "...",
+
+    "filo2": "Cultura empresarial",
+    "filo2_par1": "...",
+
+    "filo3": "Certificaciones y estándares",
+    "filo3_par1": "GMN es una empresa Trinorma, certificada bajo estándares internacionales:",
+    "filo3_par1_l1": "ISO 9001:2015 – Gestión de calidad",
+    "filo3_par1_l2": "ISO 14001:2015 – Gestión ambiental",
+    "filo3_par1_l3": "ISO 45001:2018 – Seguridad y salud ocupacional",
+    "filo3_par2": "Estas certificaciones respaldan nuestro compromiso con la mejora continua, la sostenibilidad y el bienestar de nuestro equipo y entorno.",
+
+
+
+    "filo4": "Excelencia técnica y humana",
+    "filo4_par1": "..."
+
+  },
+  
+  "contact": {
+    "title": "Contacto",
+    "intro": "Déjanos tus datos y te contactaremos a la brevedad.",
+    "name": "Nombre:",
+    "company": "Empresa:",
+    "email": "Correo:",
+    "phone": "Teléfono (opcional):",
+    "country": "País",
+    "details": "Descripción del requerimiento:",
+    "specialist": "Deseo agendar una reunión con un especialista",
+    "sent": "Enviar",
+    "confirmation": "¡Gracias! Tu mensaje ha sido enviado correctamente."
+  },
+
+  
+  "trabaja": {
+    "title": "Join Us",
+    "intro": "Déjanos tus datos y te contactaremos a la brevedad.",
+    "name": "Nombre:",
+    "company": "Empresa:",
+    "email": "Correo:",
+    "phone": "Teléfono (opcional):",
+    "country": "País",
+    "details": "Descripción del requerimiento:",
+    "specialist": "Deseo agendar una reunión con un especialista",
+    "sent": "Enviar",
+    "confirmation": "¡Gracias! Tu mensaje ha sido enviado correctamente."
+  }
+}

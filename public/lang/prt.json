@@ -1,0 +1,150 @@
+{
+
+  "navbar0": "Consultores expertos",
+
+  "navbar1": "Inicio",
+  "navbar2": "¿Quiénes somos?",
+  "navbar3": "¿Qué hacemos?",
+  "navbar4": "Casos de éxito",
+  "navbar5": "Filosofía",
+  "navbar6": "Contacto",
+
+
+
+  "header_title1": "Juntos",
+  "header_title2": "Transformamos",
+  "header_subtitle": "Especializados en Gestión de Activos Físicos con más de 20 años de experiencia, \ntransformando operaciones industriales a través de soluciones innovadoras y tecnología de vanguardia.",
+  
+
+
+
+  "overview": {
+    "title": "Destacado",
+    "1st": "Produccion",
+    "1st_par": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "2nd": "Innovacion",
+    "2nd_par": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "3rd": "Montos",
+    "3rd_par": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+
+
+  "news": {
+    "title": "Noticias",
+    "1st": "Sobre la baja de productividad",
+    "1st_par": "Sergio Adauy, director ejecutivo de la empresa local de Antofagasta, GMN, en relación a los desafíos que enfrenta la industria minera en términos de competitividad. Este tema ha cobrado relevancia en medio del aumento de los costos de producción, así como otros factores externos como la disminución de la calidad de los minerales y la escasez de recursos hídricos. Sergio Adauy, director ejecutivo de la empresa local de Antofagasta, GMN, en relación a los desafíos que enfrenta la industria minera en términos de competitividad. Este tema ha cobrado relevancia en medio del aumento de los costos de producción, así como otros factores externos como la disminución de la calidad de los minerales y la escasez de recursos hídricos.",
+    "2nd": "Innovacion",
+    "2nd_par": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "3rd": "Montos",
+    "3rd_par": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+
+
+
+  "somos": {
+    "title": "¿Quiénes somos?",
+    "intro": "Introducción",
+    "intro_par": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "vision": "Visión",
+    "vision_par": "Ser líderes globales en consultoría de Gestión de Activos Físicos, impulsados por equipos de alto desempeño que contribuyan al desarrollo y éxito constante de nuestros clientes.",
+    "mision": "Misión",
+    "mision_par": "Brindar soluciones oportunas y eficaces a los problemas de competitividad y sustentabilidad de nuestros clientes, aumentando su Valor Económico Agregado (EVA) a través de un crecimiento sostenible."
+  },
+
+
+    "somos2": {
+    "title": "Equipo Directivo",
+    "intro": "Introducción",
+    "intro_par": "\"Desde nuestros inicios, mantenemos la misma convicción: hacer que las cosas pasen.\""
+
+
+  },
+
+  "hacemos": {
+    "title": "¿Qué hacemos?",
+    "intro": "",
+    "intro_par1": "Transformamos mantenimiento, datos y experiencia en valor operacional. En GMN - Global Maintenance Network, ayudamos a empresas de minería, energía, petróleo y otras industrias intensivas en capital a mejorar la confiabilidad, reducir costos unitarios y maximizar la disponibilidad de sus activos físicos.",
+    "intro_par2": "Lo hacemos combinando experiencia en terreno, metodología de clase mundial y tecnología aplicada para entregar resultados medibles y sostenibles."
+
+
+  },
+
+
+
+  "servicios": {
+    "title": "Nuestros Servicios",
+    "service1": "Gestión de Activos y Confiabilidad",
+    "service1_par1": "Implementamos estrategias de mantenimiento centradas en la confiabilidad (RCM), asegurando que cada intervencion aporte valor real al negocio.",
+    "service1_par2": "Menos fallas, más disponibilidad, decisiones basadas en datos.",
+
+    "service2": "Optimización SAP PM / GSAP",
+    "service2_par1": "Diseñamos, configuramos y optimizamos plataformas SAP PM / EAM para alinear procesos técnicos con objetivos operacionales.",
+    "service2_par2": "Integramos personas, procesos y tecnología con visión de negocio.",
+
+    "service3": "Análitica y Business Intelligence",
+    "service3_par1": "Desarrollamos dashboards y modelos de análisis que transforman datos en decisiones.",
+    "service3_par2": "Usamos Python, Power BI y metodologías SAP para visibilizar desempeño, backlog y costos en tiempo real.",
+    "service3_par3": "De la data al valor: cada KPI cuenta una historia.",
+
+    "service4": "Servicios en Terreno, Coaching y Gestión del Cambio",
+    "service4_par1": "Consultores \"hands on\" que trabajan codo a codo con los equipos del cliente, entregando soporte operativo, capacitación y aseguramiento de calidad para que cada mejora se implemente, se adopte y perdure en el tiempo.",
+    "service4_par2": "No observamos: acompañamos, ejecutamos y transferimos conocimiento."
+
+  },
+
+
+    "logros": {
+    "title": "Casos de éxito",
+    "logro1": "Eficiencia de costos",
+    "logro1_par1": "...",
+    "logro1_par2": "...",
+
+    "logro2": "Maximización de producción",
+    "logro2_par1": "...",
+    "logro2_par2": "...",
+
+    "logro3": "Innovación",
+    "logro3_par1": "...",
+    "logro3_par2": "...."
+
+  },
+
+
+
+    "filosofia": {
+    "title": "Filosofía",
+
+    "filo1": "Frase inicial",
+    "filo1_par1": "...",
+
+    "filo2": "Cultura empresarial",
+    "filo2_par1": "...",
+
+    "filo3": "Certificaciones y estándares",
+    "filo3_par1": "GMN es una empresa Trinorma, certificada bajo estándares internacionales:",
+    "filo3_par1_l1": "ISO 9001:2015 – Gestión de calidad",
+    "filo3_par1_l2": "ISO 14001:2015 – Gestión ambiental",
+    "filo3_par1_l3": "ISO 45001:2018 – Seguridad y salud ocupacional",
+    "filo3_par2": "Estas certificaciones respaldan nuestro compromiso con la mejora continua, la sostenibilidad y el bienestar de nuestro equipo y entorno.",
+
+
+
+    "filo4": "Excelencia técnica y humana",
+    "filo4_par1": "..."
+
+  },
+  
+  "contact": {
+    "title": "Contacto",
+    "intro": "Déjanos tus datos y te contactaremos a la brevedad.",
+    "name": "Nombre:",
+    "company": "Empresa:",
+    "email": "Correo:",
+    "phone": "Teléfono (opcional):",
+    "country": "País",
+    "details": "Descripción del requerimiento:",
+    "specialist": "Deseo agendar una reunión con un especialista",
+    "sent": "Enviar",
+    "confirmation": "¡Gracias! Tu mensaje ha sido enviado correctamente."
+  }
+}
