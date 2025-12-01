@@ -24,11 +24,19 @@ app.use(express.static(path.join(__dirname, "public"))); // serve HTML, CSS, JS
 
 // === Nodemailer setup ===
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: 'smtp.gmail.com',
+  port: 587,
+  secure: false, // false for port 587
+  requireTLS: true,
   auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
   },
+  tls: {
+    ciphers: 'SSLv3',
+    rejectUnauthorized: false
+  },
+  connectionTimeout: 10000 // 10 second timeout
 });
 
 // === Endpoint to send mail ===
