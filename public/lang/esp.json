@@ -152,6 +152,7 @@
     "details": "Descripción del requerimiento:",
     "specialist": "Deseo agendar una reunión con un especialista",
     "sent": "Enviar",
+    "sending": "Enviando...",
     "confirmation": "¡Gracias! Tu mensaje ha sido enviado correctamente."
   },
 
@@ -159,13 +160,17 @@
     "title": "Únete",
     "intro": "Déjanos tus datos y te contactaremos a la brevedad.",
     "name": "Nombre:",
-    "company": "LinkedIn (URL):",
     "email": "Correo:",
-    "phone": "Área de interés:",
     "country": "País",
-    "details": "Descripción del requerimiento:",
-    "specialist": "Deseo agendar una reunión con un especialista",
+    "linkedin": "LinkedIn (URL):",
+    "area": "Área de interés:",    
+    "area1": "Marketing",    
+    "area2": "Consultoría",    
+    "area3": "Investigación",    
+    "area4": "Gestión",    
+    "cv": "CV (PDF)", 
     "sent": "Enviar",
+    "sending": "Enviando...",
     "confirmation": "¡Gracias! Tu mensaje ha sido enviado correctamente."
   }
 
