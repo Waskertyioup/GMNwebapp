@@ -19,17 +19,13 @@ app.use(express.static(path.join(__dirname, "public"))); // serve HTML, CSS, JS
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "stardustvstream@gmail.com",
-    pass: "hwmw osmd nhhz hotw", // ⚠️ app password (not normal password)
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
 
 
 
-
-app.get("/", (req, res) => {
-  res.send("OK - Backend is alive");
-});
 
 
 
@@ -68,5 +64,5 @@ app.get("/", (req, res) => {
 });
 
 // === Start server ===
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`✅ Server running at http://localhost:${PORT}`));
