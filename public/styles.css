@@ -753,7 +753,9 @@ html, body {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select,
+.form-group input[type="file"] {
   padding: 0.6rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -763,6 +765,7 @@ html, body {
   background: var(--color-surface);
   color: var(--color-text-primary);
 }
+
 
 .form-group input:focus,
 .form-group textarea:focus {
@@ -790,6 +793,8 @@ html, body {
   margin: 0;
   flex-shrink: 0;
 }
+
+
 
 .btn-send {
   background-color: var(--color-primary);
@@ -835,6 +840,42 @@ html, body {
   cursor: pointer;
   font-weight: 600;
 }
+
+
+
+button:disabled,
+.btn-send:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-send.loading {
+  position: relative;
+}
+
+.btn-send.loading::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ffffff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+
+
+
 
 /* ===== FOOTER ===== */
 footer {
