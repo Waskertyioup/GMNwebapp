@@ -250,6 +250,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// === Helper to get text from p5[data-key] ===
+function getTextFromKey(key) {
+  const el = document.querySelector(`p5[data-key="${key}"]`);
+  return el ? el.textContent : key;
+}
+
+
+
 
 // === Contact Form ===
 document.addEventListener("DOMContentLoaded", () => {
@@ -257,12 +265,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("confirmation-modal");
   const closeModal = document.getElementById("close-modal");
 
-  if (!form) return; // no contact form on this page
+  if (!form) return;
+
+  const submitBtn = form.querySelector("button[type='submit']");
+  const textContainer = submitBtn.querySelector(".btn-text");
+  const defaultKey = submitBtn.dataset.keyDefault; // e.g., "contact.sent"
+  const sendingKey = submitBtn.dataset.keySending; // e.g., "contact.sending"
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Collect data from form fields
+    // Disable button and set "sending" text
+    submitBtn.disabled = true;
+    textContainer.textContent = getTextFromKey(sendingKey);
+
     const data = {
       nombre: form.nombre.value,
       empresa: form.empresa.value,
@@ -286,53 +302,52 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.style.display = "flex";
         form.reset();
       } else {
-        alert("❌ Error al enviar: " + result.message);
+        alert(" " + result.message);
       }
     } catch (err) {
-      alert("⚠️ No se pudo enviar el formulario.");
       console.error(err);
+      alert(" No se pudo enviar el formulario.");
+    } finally {
+      // Re-enable button and restore default text
+      submitBtn.disabled = false;
+      textContainer.textContent = getTextFromKey(defaultKey);
     }
   });
 
-  // Modal close behavior
-  closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
+  // Modal close
+  closeModal.addEventListener("click", () => (modal.style.display = "none"));
   window.addEventListener("click", (e) => {
     if (e.target === modal) modal.style.display = "none";
   });
 });
 
-
-
-
-// === Joint Form ===
+// === Join Form ===
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("join-form");
   const modal = document.getElementById("join-confirmation-modal");
   const closeModal = document.getElementById("join-close-modal");
 
-  if (!form) return; // no contact form on this page
+  if (!form) return;
+
+  const submitBtn = form.querySelector("button[type='submit']");
+  const textContainer = submitBtn.querySelector(".btn-text");
+  const defaultKey = submitBtn.dataset.keyDefault; // e.g., "contact.sent"
+  const sendingKey = submitBtn.dataset.keySending; // e.g., "contact.sending"
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Collect data from form fields
-    const data = {
-      nombre: form.nombre.value,
-      empresa: form.empresa.value,
-      correo: form.correo.value,
-      telefono: form.telefono.value,
-      pais: form.pais.value,
-      requerimiento: form.requerimiento.value,
-      reunion: form.reunion.checked,
-    };
+    // Disable button and set "sending" text
+    submitBtn.disabled = true;
+    
+    textContainer.textContent = getTextFromKey(sendingKey);
+
+    const formData = new FormData(form);
 
     try {
-      const res = await fetch("/send-mail", {
+      const res = await fetch("/send-join-mail", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: formData,
       });
 
       const result = await res.json();
@@ -341,18 +356,20 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.style.display = "flex";
         form.reset();
       } else {
-        alert("❌ Error al enviar: " + result.message);
+        alert(" " + result.message);
       }
     } catch (err) {
-      alert("⚠️ No se pudo enviar el formulario.");
       console.error(err);
+      alert(" No se pudo enviar el formulario.");
+    } finally {
+      // Re-enable button and restore default text
+      submitBtn.disabled = false;
+      textContainer.textContent = getTextFromKey(defaultKey);
     }
   });
 
-  // Modal close behavior
-  closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
+  // Modal close
+  closeModal.addEventListener("click", () => (modal.style.display = "none"));
   window.addEventListener("click", (e) => {
     if (e.target === modal) modal.style.display = "none";
   });
@@ -365,27 +382,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
+let currentLanguageData = {};
+
 async function loadLanguage(lang) {
   const res = await fetch(`lang/${lang}.json`);
   const data = await res.json();
+  currentLanguageData = data; // store globally
 
   // Replace text for all elements with data-key
   document.querySelectorAll("[data-key]").forEach(el => {
     const key = el.dataset.key.split(".");
     let value = data;
-    for (const k of key) value = value[k]; // allow nested keys
+    for (const k of key) value = value[k];
     if (value) el.textContent = value;
   });
+}
+
+// Helper to get value from currentLanguageData by key
+function getTextFromKey(key) {
+  const parts = key.split(".");
+  let value = currentLanguageData;
+  for (const p of parts) {
+    if (value[p] !== undefined) value = value[p];
+    else return key; // fallback
+  }
+  return value;
 }
 
 // Default language
 loadLanguage("esp");
 
-// Buttons to change language
+// Language selector
 document.getElementById("language-selector").addEventListener("change", (e) => {
   const selectedLang = e.target.value; // "esp" or "eng"
   loadLanguage(selectedLang);
 });
+
 
 
 
