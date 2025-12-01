@@ -1,14 +1,21 @@
 import express from "express";
 import nodemailer from "nodemailer";
 import bodyParser from "body-parser";
+import multer from "multer";
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
+
+
+import dotenv from "dotenv";
+dotenv.config();
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+
 
 // Middleware
 app.use(cors());
@@ -19,8 +26,8 @@ app.use(express.static(path.join(__dirname, "public"))); // serve HTML, CSS, JS
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "stardustvstream@gmail.com",
-    pass: "hwmw osmd nhhz hotw", // ⚠️ app password (not normal password)
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
   },
 });
 
@@ -51,6 +58,50 @@ app.post("/send-mail", async (req, res) => {
     res.status(500).json({ ok: false, message: "Error enviando correo" });
   }
 });
+
+
+
+// === Dependencias ===
+
+
+const upload = multer({ storage: multer.memoryStorage() });
+
+// === Endpoint para JOIN FORM ===
+app.post("/send-join-mail", upload.single("resume"), async (req, res) => {
+  const { nombre, correo, pais, linkedin, area } = req.body;
+  const file = req.file;
+
+  try {
+    await transporter.sendMail({
+      from: `"GMN Website" <stardustvstream@gmail.com>`,
+      to: `stardustvstream@gmail.com`,
+      subject: "Nueva postulación desde formulario TRABAJA",
+      html: `
+        <h3>Nueva Postulación</h3>
+        <p><b>Nombre:</b> ${nombre}</p>
+        <p><b>Correo:</b> ${correo}</p>
+        <p><b>País:</b> ${pais}</p>
+        <p><b>LinkedIn:</b> ${linkedin}</p>
+        <p><b>Área de interés:</b> ${area}</p>
+      `,
+      attachments: file
+        ? [
+            {
+              filename: file.originalname,
+              content: file.buffer,
+              contentType: file.mimetype,
+            },
+          ]
+        : [],
+    });
+
+    res.json({ ok: true, message: "Correo enviado correctamente" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ ok: false, message: "Error enviando correo" });
+  }
+});
+
 
 // === Serve index.html on root ===
 app.get("/", (req, res) => {
