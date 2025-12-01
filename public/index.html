@@ -574,7 +574,13 @@
     </div>
 
     <div class="form-group">
-    <button type="submit" class="btn-send"><p5 data-key="contact.sent"></p5></button>
+        <button type="submit" class="btn-send" 
+                data-key-default="contact.sent" 
+                data-key-sending="contact.sending">
+          <span class="btn-text"><p5 data-key="contact.sent"></p5></span>
+        </button>
+
+
     </div>
   </form>
 
@@ -608,42 +614,54 @@
   <p><p5 data-key="trabaja.intro"></p5></p>
 
   <form id="join-form">
-    
     <div class="form-group">
-    <label><p5 data-key="trabaja.name"></p5></label>
-    <input type="text" name="nombre" required>
+      <label><p5 data-key="trabaja.name"></p5></label>
+      <input type="text" name="nombre" required>
     </div>
 
     <div class="form-group">
-    <label><p5 data-key="trabaja.email"></p5></label>
-    <input type="email" name="correo" required>
+      <label><p5 data-key="trabaja.email"></p5></label>
+      <input type="email" name="correo" required>
     </div>
 
     <div class="form-group">
-    <label><p5 data-key="trabaja.country"></p5></label>
-    <input type="text" name="pais" required>
+      <label><p5 data-key="trabaja.country"></p5></label>
+      <input type="text" name="pais" required>
     </div>
 
     <div class="form-group">
-    <label><p5 data-key="trabaja.company"></p5></label>
-    <input type="text" name="empresa" required>
+      <label><p5 data-key="trabaja.linkedin"></p5></label>
+      <input type="text" name="linkedin" required>
     </div>
 
-    
-
+    <!-- SELECT / DROPDOWN -->
     <div class="form-group">
-    <label><p5 data-key="trabaja.phone"></p5></label>
-    <input type="text" name="telefono">
+      <label><p5 data-key="trabaja.area"></p5></label>
+      <select name="area" required>
+        <option value="" disabled selected></option>
+        <option value="ingenieria"><p5 data-key="trabaja.area1"></p5></option>
+        <option value="desarrollo"><p5 data-key="trabaja.area2"></p5></option>
+        <option value="marketing"><p5 data-key="trabaja.area3"></p5></option>
+        <option value="administracion"><p5 data-key="trabaja.area4"></p5></option>
+      </select>
     </div>
 
-
-
-
+    <!-- PDF UPLOAD -->
+    <div class="form-group">
+      <label><p5 data-key="trabaja.cv"></p5></label>
+      <input type="file" name="resume" accept="application/pdf" required>
+    </div>
 
     <div class="form-group">
-    <button type="submit" class="btn-send"><p5 data-key="trabaja.sent"></p5></button>
+      <button type="submit" class="btn-send" 
+                data-key-default="trabaja.sent" 
+                data-key-sending="trabaja.sending">
+          <span class="btn-text"><p5 data-key="trabaja.sent"></p5></span>
+        </button>
+
     </div>
   </form>
+
 
 
   </div>
