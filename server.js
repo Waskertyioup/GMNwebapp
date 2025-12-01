@@ -24,6 +24,16 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+
+
+
+app.get("/", (req, res) => {
+  res.send("OK - Backend is alive");
+});
+
+
+
+
 // === Endpoint to send mail ===
 app.post("/send-mail", async (req, res) => {
   const { nombre, empresa, correo, telefono, pais, requerimiento, reunion } = req.body;
