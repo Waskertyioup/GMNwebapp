@@ -60,9 +60,14 @@
   
 
 <section id="inicio" class="slide hero">
+  <!-- <video autoplay muted loop playsinline class="bg-video">
+    <source src="/videos/Portada.mp4" type="video/mp4">
+  </video> -->
   <video autoplay muted loop playsinline class="bg-video">
-    <source src="https://drive.google.com/uc?export=download&id=1CadMRNbGioJgCIS29wbalkUjhEicseUj" type="video/mp4">
+    <source src="https://res.cloudinary.com/dech95yov/video/upload/f_auto,q_auto:best/Portada_xytqox.mp4" type="video/mp4" />
   </video>
+
+
 
   <div class="overlay">
     <h1><p5 data-key="header_title1"></p5></h1>
@@ -70,7 +75,6 @@
     <p1><p5 data-key="header_subtitle"></p5></p1>
   </div>
 </section>
-
 
 
 
@@ -133,7 +137,7 @@
     <h2><span class="highlight-orange"><p5 data-key="news.title"></p5></span></h2>
 
     <!-- FIRST BLOCK = VIDEO -->
-    <div class="news-block">
+    <div class="news-block notop">
       <div class="news-text">
         <h3><p5 data-key="news.1st"></p5></h3>
         <p><p5 data-key="news.1st_par"></p5></p>
@@ -150,7 +154,7 @@
     </div>
 
     <!-- SECOND BLOCK -->
-    <div class="news-block">
+    <div class="news-block notop">
       <div class="news-text">
         <h3><p5 data-key="news.2nd"></p5></h3>
         <p><p5 data-key="news.2nd_par"></p5></p>
@@ -192,12 +196,16 @@
         <p><p5 data-key="somos.intro_par"></p5></p>
 
 
+      <!-- <div class="video-container">
+        <video src="videos/GMN_Imagina.mp4" controls></video>
+      </div> -->
       <div class="video-container">
-        <video controls>
-          <source src="https://drive.google.com/uc?export=download&id=1UG5-FEIWZh6nVMxJzuhDwqHdyEO-ypYH" type="video/mp4">
+        <video controls style="width:100%; max-width:800px;">
+          <source src="https://res.cloudinary.com/dech95yov/video/upload/v1740668056/GMN_Imagina_drbd6j.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
+
 
 
       <h3><p5 data-key="somos.vision"></p5></h3>
@@ -363,20 +371,6 @@
   <h3><p5 data-key="logros.logro3"></p5></h3>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-  <!-- <div class="carousel-container">
-    <button class="carousel-btn prev">‹</button>
-    <div class="carousel-track">
-      <div class="card"><img src="images/codelco.png" alt=""><h4>Codelco</h4></div>
-      <div class="card"><img src="images/glencore.png" alt=""><h4>Glencore</h4></div>
-      <div class="card"><img src="images/antapaccay.png" alt=""><h4>Antapaccay</h4></div>
-      <div class="card"><img src="images/Cerro matoso.png" alt=""><h4>Cerro Matoso</h4></div>
-      <div class="card"><img src="images/sierra gorda.png" alt=""><h4>Sierra Gorda</h4></div>
-      <div class="card"><img src="images/bhp.png" alt=""><h4>BHP</h4></div>
-      <div class="card"><img src="images/cocacola.png" alt=""><h4>Coca-Cola Embonor</h4></div>
-      <div class="card"><img src="images/spence.png" alt=""><h4>Spence</h4></div>
-    </div>
-    <button class="carousel-btn next">›</button>
-  </div> -->
 
 
     <div class="carousel-container">
@@ -621,18 +615,8 @@
     </div>
 
     <div class="form-group">
-    <label><p5 data-key="trabaja.company"></p5></label>
-    <input type="text" name="empresa" required>
-    </div>
-
-    <div class="form-group">
     <label><p5 data-key="trabaja.email"></p5></label>
     <input type="email" name="correo" required>
-    </div>
-
-    <div class="form-group">
-    <label><p5 data-key="trabaja.phone"></p5></label>
-    <input type="text" name="telefono">
     </div>
 
     <div class="form-group">
@@ -641,23 +625,20 @@
     </div>
 
     <div class="form-group">
-      <label for="requerimiento"><p5 data-key="trabaja.details"></p5></label>
-      <textarea 
-        id="requerimiento" 
-        name="requerimiento" 
-        rows="4" 
-        cols="50" 
-        required
-        placeholder="Describe tu requerimiento aquí..."
-      ></textarea>
+    <label><p5 data-key="trabaja.company"></p5></label>
+    <input type="text" name="empresa" required>
     </div>
 
+    
+
     <div class="form-group">
-    <label>
-      <input type="checkbox" name="reunion">
-      <p5 data-key="trabaja.specialist"></p5>
-    </label>
+    <label><p5 data-key="trabaja.phone"></p5></label>
+    <input type="text" name="telefono">
     </div>
+
+
+
+
 
     <div class="form-group">
     <button type="submit" class="btn-send"><p5 data-key="trabaja.sent"></p5></button>
