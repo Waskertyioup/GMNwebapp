@@ -255,125 +255,250 @@ function getTextFromKey(key) {
   const el = document.querySelector(`p5[data-key="${key}"]`);
   return el ? el.textContent : key;
 }
+// === EmailJS Configuration ===
+// const EMAILJS_CONFIG = {
+//   publicKey: 'YOUR_PUBLIC_KEY_HERE',
+//   serviceId: 'YOUR_SERVICE_ID_HERE',
+//   contactTemplateId: 'YOUR_CONTACT_TEMPLATE_ID_HERE',
+//   joinTemplateId: 'YOUR_JOIN_TEMPLATE_ID_HERE'
+// };
 
+// Initialize EmailJS
+// (function() {
+//   if (EMAILJS_CONFIG.publicKey && EMAILJS_CONFIG.publicKey !== 'YOUR_PUBLIC_KEY_HERE') {
+//     emailjs.init(EMAILJS_CONFIG.publicKey);
+//     console.log('EmailJS initialized for frontend');
+//   } else {
+//     console.warn('EmailJS not configured for frontend');
+//   }
+// })();
 
+// === Contact Form (Frontend EmailJS) ===
+// Contact Form Submission
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  const form = e.target;
+  const submitButton = form.querySelector('button[type="submit"]');
+  const originalText = submitButton.querySelector('.btn-text').textContent;
+  
+  // Get form data
+  const formData = {
+    nombre: form.nombre.value,
+    empresa: form.empresa.value,
+    correo: form.correo.value,
+    telefono: form.telefono.value,
+    pais: form.pais.value,
+    requerimiento: form.requerimiento.value,
+    reunion: form.reunion.checked
+  };
 
-
-// === Contact Form ===
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contact-form");
-  const modal = document.getElementById("confirmation-modal");
-  const closeModal = document.getElementById("close-modal");
-
-  if (!form) return;
-
-  const submitBtn = form.querySelector("button[type='submit']");
-  const textContainer = submitBtn.querySelector(".btn-text");
-  const defaultKey = submitBtn.dataset.keyDefault; // e.g., "contact.sent"
-  const sendingKey = submitBtn.dataset.keySending; // e.g., "contact.sending"
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    // Disable button and set "sending" text
-    submitBtn.disabled = true;
-    textContainer.textContent = getTextFromKey(sendingKey);
-
-    const data = {
-      nombre: form.nombre.value,
-      empresa: form.empresa.value,
-      correo: form.correo.value,
-      telefono: form.telefono.value,
-      pais: form.pais.value,
-      requerimiento: form.requerimiento.value,
-      reunion: form.reunion.checked,
-    };
-
-    try {
-      const res = await fetch("/send-mail", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      const result = await res.json();
-
-      if (result.ok) {
-        modal.style.display = "flex";
-        form.reset();
-      } else {
-        alert(" " + result.message);
-      }
-    } catch (err) {
-      console.error(err);
-      alert(" No se pudo enviar el formulario.");
-    } finally {
-      // Re-enable button and restore default text
-      submitBtn.disabled = false;
-      textContainer.textContent = getTextFromKey(defaultKey);
+  // Show loading state
+  if (submitButton.dataset.keySending) {
+    const sendingText = document.querySelector(`[data-key="${submitButton.dataset.keySending}"]`);
+    if (sendingText) {
+      submitButton.querySelector('.btn-text').textContent = sendingText.textContent;
     }
-  });
+  }
+  submitButton.disabled = true;
 
-  // Modal close
-  closeModal.addEventListener("click", () => (modal.style.display = "none"));
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) modal.style.display = "none";
-  });
-});
-
-// === Join Form ===
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("join-form");
-  const modal = document.getElementById("join-confirmation-modal");
-  const closeModal = document.getElementById("join-close-modal");
-
-  if (!form) return;
-
-  const submitBtn = form.querySelector("button[type='submit']");
-  const textContainer = submitBtn.querySelector(".btn-text");
-  const defaultKey = submitBtn.dataset.keyDefault; // e.g., "contact.sent"
-  const sendingKey = submitBtn.dataset.keySending; // e.g., "contact.sending"
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    // Disable button and set "sending" text
-    submitBtn.disabled = true;
+  try {
+    console.log('📤 Sending contact form via backend...');
     
-    textContainer.textContent = getTextFromKey(sendingKey);
+    // Send to YOUR backend endpoint
+    const response = await fetch('/send-mail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)
+    });
 
-    const formData = new FormData(form);
-
-    try {
-      const res = await fetch("/send-join-mail", {
-        method: "POST",
-        body: formData,
-      });
-
-      const result = await res.json();
-
-      if (result.ok) {
-        modal.style.display = "flex";
-        form.reset();
-      } else {
-        alert(" " + result.message);
-      }
-    } catch (err) {
-      console.error(err);
-      alert(" No se pudo enviar el formulario.");
-    } finally {
-      // Re-enable button and restore default text
-      submitBtn.disabled = false;
-      textContainer.textContent = getTextFromKey(defaultKey);
+    const result = await response.json();
+    
+    if (result.ok) {
+      console.log('Form sent successfully via backend');
+      
+      // Show confirmation modal
+      const modal = document.getElementById('confirmation-modal');
+      modal.style.display = 'block';
+      
+      // Reset form
+      form.reset();
+    } else {
+      console.error('Backend error:', result.message);
+      alert('Error: ' + result.message);
     }
-  });
-
-  // Modal close
-  closeModal.addEventListener("click", () => (modal.style.display = "none"));
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) modal.style.display = "none";
-  });
+  } catch (error) {
+    console.error('Error sending form:', error);
+    alert('Error de conexión. Por favor, intenta nuevamente.');
+  } finally {
+    // Reset button state
+    submitButton.disabled = false;
+    submitButton.querySelector('.btn-text').textContent = originalText;
+  }
 });
+
+//   // Modal close
+//   closeModal.addEventListener("click", () => (modal.style.display = "none"));
+//   window.addEventListener("click", (e) => {
+//     if (e.target === modal) modal.style.display = "none";
+//   });
+// });
+
+
+
+
+// === Join Form (Frontend EmailJS) ===
+// Join Form Submission
+// Join Form Submission - USE FORM DATA
+document.getElementById('join-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  const form = e.target;
+  const submitButton = form.querySelector('button[type="submit"]');
+  const originalText = submitButton.querySelector('.btn-text').textContent;
+  
+  // Get form data
+  const nombre = form.nombre.value;
+  const correo = form.correo.value;
+  const pais = form.pais.value;
+  const linkedin = form.linkedin.value;
+  const area = form.area.value;
+  
+  // Get file
+  const resumeFile = form.resume.files[0];
+  
+  // Validate file
+  if (!resumeFile) {
+    alert('Por favor, adjunta tu CV.');
+    return;
+  }
+
+  // Check file size (5MB max)
+  if (resumeFile.size > 5 * 1024 * 1024) {
+    alert('El archivo es demasiado grande. Máximo 5MB.');
+    return;
+  }
+
+  // Show loading state
+  if (submitButton.dataset.keySending) {
+    const sendingText = document.querySelector(`[data-key="${submitButton.dataset.keySending}"]`);
+    if (sendingText) {
+      submitButton.querySelector('.btn-text').textContent = sendingText.textContent;
+    }
+  }
+  submitButton.disabled = true;
+
+  try {
+    console.log('Sending join form via backend (FormData)...');
+    
+    // Create FormData (proper way for file uploads)
+    const formData = new FormData();
+    formData.append('nombre', nombre);
+    formData.append('correo', correo);
+    formData.append('pais', pais);
+    formData.append('linkedin', linkedin);
+    formData.append('area', area);
+    formData.append('resume', resumeFile); // File is appended directly
+
+    console.log('FormData created, file size:', resumeFile.size, 'bytes');
+
+    // Send to backend using FormData
+    const response = await fetch('/send-join-mail', {
+      method: 'POST',
+      body: formData
+      // NO Content-Type header - let browser set it automatically for FormData
+    });
+
+    const result = await response.json();
+    
+    if (result.ok) {
+      console.log('Join form sent successfully via backend');
+      
+      // Show confirmation modal
+      const modal = document.getElementById('join-confirmation-modal');
+      modal.style.display = 'block';
+      
+      // Reset form
+      form.reset();
+    } else {
+      console.error('Backend error:', result.message);
+      alert('Error: ' + result.message);
+    }
+  } catch (error) {
+    console.error('Error sending form:', error);
+    
+    // Handle 413 error specifically
+    if (error.message.includes('Unexpected token') || error.message.includes('Failed to fetch')) {
+      alert('Error: El archivo es demasiado grande o hay un problema de conexión.');
+    } else {
+      alert('Error de conexión. Por favor, intenta nuevamente.');
+    }
+  } finally {
+    // Reset button state
+    submitButton.disabled = false;
+    submitButton.querySelector('.btn-text').textContent = originalText;
+  }
+});
+
+// Helper function to convert file to base64
+function convertFileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      // Remove the data:application/pdf;base64, part
+      const base64 = reader.result.split(',')[1];
+      resolve(base64);
+    };
+    reader.onerror = error => reject(error);
+  });
+}
+
+
+//   // Modal close
+//   closeModal.addEventListener("click", () => (modal.style.display = "none"));
+//   window.addEventListener("click", (e) => {
+//     if (e.target === modal) modal.style.display = "none";
+//   });
+// });
+
+// Close modal handlers
+document.getElementById('close-modal')?.addEventListener('click', function() {
+  document.getElementById('confirmation-modal').style.display = 'none';
+});
+
+document.getElementById('join-close-modal')?.addEventListener('click', function() {
+  document.getElementById('join-confirmation-modal').style.display = 'none';
+});
+// Add escape key support
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    const modal = document.getElementById('confirmation-modal');
+    if (modal && modal.style.display === 'block') {
+      modal.style.display = 'none';
+    }
+    
+    const joinModal = document.getElementById('join-confirmation-modal');
+    if (joinModal && joinModal.style.display === 'block') {
+      joinModal.style.display = 'none';
+    }
+  }
+});
+
+// Close modals when clicking outside
+// window.addEventListener('click', function(event) {
+//   const contactModal = document.getElementById('confirmation-modal');
+//   const joinModal = document.getElementById('join-confirmation-modal');
+  
+//   if (event.target === contactModal) {
+//     contactModal.style.display = 'none';
+//   }
+//   if (event.target === joinModal) {
+//     joinModal.style.display = 'none';
+//   }
+// });
 
 
 

@@ -817,8 +817,6 @@ html, body {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
   z-index: 999;
 }
 
@@ -828,6 +826,15 @@ html, body {
   border-radius: var(--radius-lg);
   text-align: center;
   border: 2px solid var(--color-primary);
+  
+  /* Add these centering properties: */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+  width: 90%;
+  z-index: 1000;
 }
 
 .modal-content button {
