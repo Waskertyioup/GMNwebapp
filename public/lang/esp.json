@@ -13,7 +13,7 @@
 
   "header_title1": "Juntos",
   "header_title2": "Transformamos",
-  "header_subtitle": "Especializados en Gestión de Activos Físicos con más de 20 años de experiencia, \ntransformando operaciones industriales a través de soluciones innovadoras y tecnología de vanguardia.",
+  "header_subtitle": "Especializados en Gestión de Activos Físicos con más de 20 años de experiencia, transformando operaciones industriales a través de soluciones innovadoras y tecnología de vanguardia.",
   
 
 
@@ -22,7 +22,11 @@
     "title": "GMN en 2025",
     "subtitle": "\"Solo en este año, GMN ha ayudado a las empresas a ahorrar más de --- millones de dólares.\"",
     "1st": "Valor creado por GMN",
-    "1st_par": "Para un total de más de --- proyectos, para ---+ clientes:",
+    "1st_par1": "+20 años de experiencia en minería y sectores intensivos en capital",
+    "1st_par2": "+8 operaciones mineras apoyadas en Chile y Latinoamérica",
+    "1st_par3": "+200.000 Órdenes de Trabajo regularizadas y optimizadas en SAP PM",
+    "1st_par4": "Experiencia real en proyectos de alta criticidad y gran escala",
+    "casosexito": "Ver nuestros casos de éxito",
     "card1": "$200",
     "card1_sub": "MILLONES",
     "card2": "",
@@ -47,7 +51,9 @@
   "somos": {
     "title": "¿Quiénes somos?",
     "intro": "Introducción",
-    "intro_par": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "intro_par1": "Somos Global Maintenance Network (GMN / GSAPGROUP), una consultora latinoamericana con más de 25 años elevando el desempeño de organizaciones intensivas en capital.",
+    "intro_par2": " Ponemos el talento de nuestro equipo al servicio de cada operación, integrándonos a los objetivos del cliente con disciplina, análisis profundo y una ejecución que transforma los desafíos en mejoras sostenibles.",
+    "intro_par3": "Nuestra trayectoria en maximización de producción, optimización de costos y confiabilidad de activos nos ha permitido impulsar a líderes industriales en Chile y Latinoamérica con resultados medibles y sostenidos en el tiempo.",
     "vision": "Visión",
     "vision_par": "Ser líderes globales en consultoría de Gestión de Activos Físicos, impulsados por equipos de alto desempeño que contribuyan al desarrollo y éxito constante de nuestros clientes.",
     "mision": "Misión",
@@ -77,18 +83,19 @@
     "title": "Nuestros Servicios",
     "service1": "Maximización de Producción",
     "service1_par1": "Impulsamos el rendimiento operacional asegurando que los activos críticos cumplan y superen los niveles de producción para los cuales fueron diseñados.",
-    "service1_par2": " Aplicamos metodologías avanzadas de confiabilidad para diagnosticar el comportamiento real de los equipos, identificar restricciones sistémicas y eliminar fallas que afectan la continuidad operacional. Nuestro análisis va desde la cadena completa de valor hasta la intervención puntual en cada activo, permitiendo alcanzar niveles superiores de disponibilidad y rendimiento.",
+    "service1_par2": "Aplicamos metodologías avanzadas de confiabilidad para diagnosticar el comportamiento real de los equipos, identificar restricciones sistémicas y eliminar fallas que afectan la continuidad operacional. Nuestro análisis va desde la cadena completa de valor hasta la intervención puntual en cada activo, permitiendo alcanzar niveles superiores de disponibilidad y rendimiento.",
     "service1_par3": "El impacto es directo: más toneladas procesadas, ciclos operacionales más estables y una operación alineada a la producción meta con precisión técnica y disciplina operacional.",
 
     "service2": "Reducción de costos",
     "service2_par1": "Convertimos ineficiencias invisibles en ahorros concretos.",
-    "service2_par2": "Reducimos los costos operacionales mediante la identificación de ineficiencias estructurales y la optimización de los recursos clave del negocio. Nuestra metodología propia de optimización de inventarios permite recuperar activos que ya no generan retorno, eliminar sobrestock histórico y ordenar procesos que hoy generan pérdidas silenciosas. Complementamos esto con estrategias de mantenimiento diseñadas para evitar fallas costosas y maximizar la vida útil de cada equipo.",
-    "service2_par3": "El resultado es una estructura de costos más competitiva, con decisiones sustentadas en datos y un control financiero operacional que impacta directamente la rentabilidad del negocio",
+    "service2_par2": "Reducimos los costos operacionales mediante la identificación de ineficiencias estructurales y la optimización de los recursos clave del negocio.",
+    "service2_par3": "Nuestra metodología propia de optimización de inventarios permite recuperar activos que ya no generan retorno, eliminar sobrestock histórico y ordenar procesos que hoy generan pérdidas silenciosas. Complementamos esto con estrategias de mantenimiento diseñadas para evitar fallas costosas y maximizar la vida útil de cada equipo.",
+    "service2_par4": "El resultado es una estructura de costos más competitiva, con decisiones sustentadas en datos y un control financiero operacional que impacta directamente la rentabilidad del negocio.",
 
     "service3": "Innovación",
-    "service3_par1": " Llevamos a nuestros clientes a un nivel superior de gestión mediante soluciones digitales que integran datos, inteligencia artificial y automatización. Desarrollamos asistentes virtuales capaces de entregar insights operacionales en tiempo real, detectando desviaciones y proponiendo acciones inmediatas basadas en modelos analíticos. Integramos SAP, Power BI y diversas fuentes de información para disponibilizar datos críticos",
-    "service3_par2": " Esto habilita la toma de decisiones instantánea para ejecutivos y equipos operacionales, elevando la eficiencia, la agilidad y la predictibilidad de toda la operación.",
-    
+    "service3_par1": "Llevamos a nuestros clientes a un nivel superior de gestión mediante soluciones digitales que integran datos, inteligencia artificial y automatización.",
+    "service3_par2": "Desarrollamos asistentes virtuales capaces de entregar insights operacionales en tiempo real, detectando desviaciones y proponiendo acciones inmediatas basadas en modelos analíticos. Integramos SAP, Power BI y diversas fuentes de información para disponibilizar datos críticos.",
+    "service3_par3": "Esto habilita la toma de decisiones instantánea para ejecutivos y equipos operacionales, elevando la eficiencia, la agilidad y la predictibilidad de toda la operación.",
 
     "service4": "Servicios en Terreno, Coaching y Gestión del Cambio",
     "service4_par1": "Consultores \"hands on\" que trabajan codo a codo con los equipos del cliente, entregando soporte operativo, capacitación y aseguramiento de calidad para que cada mejora se implemente, se adopte y perdure en el tiempo.",
@@ -122,20 +129,23 @@
     "filo1_par1": "\"NOS INVOLUCRAMOS CON TUS DESAFÍOS COMO SI FUERAN PROPIOS, ACOMPAÑÁNDOTE CON COMPROMISO Y RESULTADOS SOSTENIBLES.\"",
 
     "filo2": "Cultura empresarial",
-    "filo2_par1": "Nuestra cultura empresarial se basa en relaciones de largo plazo construidas sobre confianza, excelencia técnica, operacional y resultados comprobables. Trabajamos junto a nuestros clientes como un equipo integrado, combinando conocimiento especializado, disciplina y una ejecución rigurosa que asegura avances sostenibles. Promovemos el aprendizaje continuo, altos estándares de seguridad y una gestión responsable hacia las personas y el entorno.",
-    "filo2_par2": "Este modelo de trabajo nos permite diagnosticar con precisión, anticipar riesgos y diseñar soluciones de alto impacto que elevan la productividad y la eficiencia. No solo entregamos consultoría: aseguramos implementación real, adopción efectiva y resultados que perduran",
+    "filo2_par1": "Construimos relaciones de largo plazo sustentadas en confianza, compromiso y una excelencia técnica que hemos perfeccionado durante décadas. Nos integramos de manera natural a los equipos del cliente, trabajando con rigor, cercanía y una disciplina orientada al valor que garantiza ejecución impecable y mejoras que se consolidan en la operación.",
+    "filo2_par2": "En GMN no solo asesoramos: aseguramos implementación efectiva, adopción sostenida y resultados que realmente perduran.",
 
     "filo3": "Certificaciones y estándares",
+    "filo3_par0": "Promovemos el aprendizaje continuo, altos estándares de seguridad y una gestión responsable hacia las personas y el entorno.",
     "filo3_par1": "GMN es una empresa Trinorma, certificada bajo estándares internacionales:",
     "filo3_par1_l1": "ISO 9001:2015 – Gestión de calidad",
     "filo3_par1_l2": "ISO 14001:2015 – Gestión ambiental",
     "filo3_par1_l3": "ISO 45001:2018 – Seguridad y salud ocupacional",
-    "filo3_par2": "Estas certificaciones respaldan nuestro compromiso con la mejora continua, la sostenibilidad y el bienestar de nuestro equipo y entorno.",
+    "filo3_par2": " Estamos acreditados en el sistema SICEP con Categoría A, destacando el 100 % en calidad, medioambiente y automatización, lo que respalda nuestra gestión integral, segura y sostenible.",
 
 
 
     "filo4": "Excelencia técnica y humana",
     "filo4_par1": "Nuestro valor está en las personas; consultores con experiencia comprobada que hacen que las cosas pasen.",
+    "filo4_par2": "Nuestro equipo reúne más de 25 años de experiencia combinada en confiabilidad operacional, estrategias de mantenimiento, implementación y optimización SAP PM/S4HANA, gestión de inventarios y analítica avanzada aplicada directamente a operaciones intensivas en capital",
+    "filo4_par3": " La experiencia en terreno y la disciplina técnica son parte de nuestro ADN corporativo.",
 
     "filo4_btn": "Conócenos más"
 

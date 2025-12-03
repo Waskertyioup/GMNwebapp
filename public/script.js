@@ -501,6 +501,48 @@ document.addEventListener('keydown', function(event) {
 // });
 
 
+// Toggle para "Ver más" en servicios
+document.addEventListener('DOMContentLoaded', function() {
+  // Seleccionar todos los botones "Ver más"
+  const verMasBtns = document.querySelectorAll('.ver-mas-btn');
+  
+  verMasBtns.forEach(button => {
+    button.addEventListener('click', function() {
+      // Encontrar el servicio padre
+      const servicio = this.closest('.servicio');
+      // Encontrar el texto oculto dentro de este servicio
+      const hiddenText = servicio.querySelector('.hidden-text');
+      const visibleText = servicio.querySelector('.visible-text');
+      
+      // Alternar la visibilidad
+      if (hiddenText.style.display === 'none' || !hiddenText.classList.contains('show')) {
+        // Mostrar texto oculto
+        hiddenText.style.display = 'inline';
+        setTimeout(() => {
+          hiddenText.classList.add('show');
+        }, 10);
+        
+        // Cambiar texto del botón
+        this.textContent = 'Ver menos';
+        this.classList.add('expanded');
+        
+        // Ajustar la altura del servicio
+        servicio.style.minHeight = 'auto';
+      } else {
+        // Ocultar texto
+        hiddenText.classList.remove('show');
+        setTimeout(() => {
+          hiddenText.style.display = 'none';
+        }, 300);
+        
+        // Cambiar texto del botón
+        this.textContent = 'Ver más';
+        this.classList.remove('expanded');
+      }
+    });
+  });
+});
+
 
 
 
@@ -826,3 +868,5 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+
