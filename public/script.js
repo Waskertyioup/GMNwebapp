@@ -603,6 +603,48 @@ document.getElementById("language-selector").addEventListener("change", (e) => {
 
 
 
+
+
+
+
+
+//animacion cartas
+// Function to check if element is in viewport
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+    rect.bottom >= 0
+  );
+}
+
+// Function to handle scroll animation
+function handleScrollAnimation() {
+  const cardsContainer = document.querySelector('.cards-container2');
+  
+  if (cardsContainer && !cardsContainer.classList.contains('in-view')) {
+    if (isInViewport(cardsContainer)) {
+      cardsContainer.classList.add('in-view');
+    }
+  }
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+  // Initial check
+  handleScrollAnimation();
+  
+  // Add scroll listener
+  window.addEventListener('scroll', handleScrollAnimation);
+});
+
+
+
+
+
+
+
+
 // Carousel data with separate images for thumbnails and main display
 const carouselData = [
     {

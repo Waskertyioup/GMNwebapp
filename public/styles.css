@@ -91,7 +91,9 @@ html, body {
 
 .slide h2,
 .slide h3,
-.slide p {
+.slide p,
+.slide a,
+.slide li {
   text-align: left;
   margin-left: 0;
   margin-right: auto;
@@ -110,7 +112,9 @@ html, body {
   margin-bottom: 0.75rem;
 }
 
-.slide p {
+.slide p,
+.slide a,
+.slide li {
   font-size: var(--font-size-xl);
   margin-bottom: var(--spacing-md);
   line-height: 1.6;
@@ -1506,4 +1510,788 @@ footer {
 /* Para asegurar que el botón esté en una nueva línea */
 .servicio p {
   position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Contact header - above both columns */
+
+/* Contact header - above both columns */
+
+/* Contact header - above everything */
+/* Contact header - above everything */
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-intro {
+  color: #666;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Two columns layout */
+.contact-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.contact-form-column {
+  flex: 1;
+  width: 100%; /* Changed from min-width */
+}
+
+.contact-info-column {
+  flex: 1;
+  width: 100%; /* Changed from min-width */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Form Card - matching style with info card */
+.form-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid #eee;
+  height: 100%;
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box; /* Important for padding */
+}
+
+/* Form styling */
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #444;
+  font-weight: 500;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Important */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+  width: 100%;
+}
+
+.form-group label[for="reunion"] {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.form-group label[for="reunion"] input {
+  width: auto;
+  margin-right: 10px;
+}
+
+/* Contact info card */
+.info-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid #eee;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.info-card h3 {
+  color: #333;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+  font-size: 1.3rem;
+}
+
+.info-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.info-section:last-child {
+  margin-bottom: 0;
+}
+
+.info-icon {
+  color: #ff6b35;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.info-content {
+  flex: 1;
+  width: 100%;
+}
+
+.info-content h4 {
+  color: #444;
+  margin: 0 0 5px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.info-content p {
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.contact-link {
+  color: #ff6b35;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.contact-link:hover {
+  color: #e05a2b;
+  text-decoration: underline;
+}
+
+/* Map container */
+.map-container {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid #eee;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 250px;
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+/* Submit button */
+.btn-send {
+  background: #ff6b35;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  width: auto; /* Don't force full width */
+  display: inline-block;
+}
+
+.btn-send:hover {
+  background: #e05a2b;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 107, 53, 0.2);
+}
+
+/* Responsive design - FIXED */
+@media (max-width: 992px) {
+  .contact-columns {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-header {
+    margin-bottom: 30px;
+    padding: 0 15px; /* Add padding to header on mobile */
+  }
+  
+  .contact-columns {
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .contact-form-column,
+  .contact-info-column {
+    width: 100%;
+    padding: 0 15px; /* Add consistent side padding */
+    box-sizing: border-box;
+  }
+  
+  .form-card,
+  .info-card {
+    padding: 25px 20px; /* Adjust padding for mobile */
+    width: 100%;
+    margin: 0 auto; /* Center the cards */
+    max-width: 100%; /* Don't exceed parent width */
+  }
+  
+  .contact-intro {
+    font-size: 1rem;
+    padding: 0 15px; /* Add padding to intro text */
+  }
+  
+  /* Reset any potential margins on mobile */
+  .contact-form-column form,
+  .info-card,
+  .map-container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  /* Ensure iframe fits properly */
+  .map-wrapper {
+    height: 200px; /* Slightly smaller on mobile */
+  }
+  
+  /* Make button full width on mobile */
+  .btn-send {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Ensure inputs don't exceed container */
+  .form-group input,
+  .form-group textarea {
+    max-width: 100%;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .contact-form-column,
+  .contact-info-column {
+    padding: 0 10px;
+  }
+  
+  .form-card,
+  .info-card {
+    padding: 20px 15px;
+    border-radius: 6px;
+  }
+  
+  .contact-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .contact-intro {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+/* Select dropdown styling */
+.form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: white;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+  appearance: none; /* Remove default arrow */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 16px;
+  padding-right: 40px; /* Make room for the arrow */
+  cursor: pointer;
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.1);
+}
+
+/* File upload styling */
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: white;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.form-group input[type="file"]:focus {
+  outline: none;
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.1);
+}
+
+/* File note text */
+.file-note {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+/* Make sure select and file inputs match other inputs */
+.form-group select,
+.form-group input[type="file"] {
+  font-family: inherit;
+}
+
+/* Optional: Style the file input button on hover */
+.form-group input[type="file"]:hover {
+  border-color: #bbb;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cards-container2 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card2 {
+  flex: 1 1 calc(33.333% - 20px); /* Flexible basis for 3 columns */
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  color: var(--color-text-primary);
+  transition: transform var(--transition-fast) ease, box-shadow var(--transition-fast) ease;
+  min-width: 300px; /* Minimum width before stacking */
+  max-width: 350px; /* Maximum width to prevent stretching */
+  height: 350px; /* Fixed height for consistency */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* Image takes 70% of card */
+.card2 img {
+  width: 100%;
+  height: 70%; /* 70% for image */
+  object-fit: cover;
+  border-radius: 4px 4px 0 0; /* Rounded top corners only */
+  flex-shrink: 0;
+}
+
+/* Text content takes 30% of card */
+.card2 .card2-title,
+.card2 .card2-subtitle {
+  flex: 0 0 auto; /* Don't grow or shrink */
+}
+
+.card2-title {
+  font-weight: bold;
+  text-align: center !important;
+  font-size: 1.8rem !important; /* Reduced from 4rem */
+  color: var(--color-text-primary);
+  margin: 15px 15px 5px 15px;
+  line-height: 1.2;
+}
+
+.card2-subtitle {
+  color: var(--color-text-secondary, #666);
+  text-align: center !important;
+  font-size: 1.1rem !important; /* Reduced from 2rem */
+  margin: 0 15px 15px 15px;
+  line-height: 1.4;
+  flex-grow: 1; /* Push content to top */
+}
+
+.card2:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 15px rgba(255, 107, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Responsive behavior */
+@media (max-width: 1100px) {
+  .card2 {
+    flex: 1 1 calc(50% - 20px); /* 2 columns on tablet */
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .card2 {
+    flex: 1 1 100%; /* 1 column on mobile */
+    max-width: 100%;
+    min-width: 0; /* Remove min-width constraint */
+    height: 320px; /* Slightly shorter on mobile */
+  }
+  
+  .cards-container2 {
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .card2-title {
+    font-size: 1.6rem !important;
+    margin: 12px 12px 4px 12px;
+  }
+  
+  .card2-subtitle {
+    font-size: 1rem !important;
+    margin: 0 12px 12px 12px;
+  }
+  
+  .card2 img {
+    height: 65%; /* Slightly less height for image on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .card2 {
+    height: 300px;
+  }
+  
+  .card2-title {
+    font-size: 1.4rem !important;
+  }
+  
+  .card2-subtitle {
+    font-size: 0.95rem !important;
+  }
+  
+  .cards-container2 {
+    gap: 10px;
+    padding: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Card container - initial state */
+.cards-container2 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  opacity: 0; /* Initially hidden */
+  transform: translateX(50px); /* Start slightly to the right */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* When container is in view */
+.cards-container2.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Individual card animation */
+.card2 {
+  flex: 1 1 calc(33.333% - 20px);
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  color: var(--color-text-primary);
+  transition: transform var(--transition-fast) ease, box-shadow var(--transition-fast) ease;
+  min-width: 300px;
+  max-width: 350px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  
+  /* Animation for individual cards */
+  opacity: 0;
+  transform: translateX(100px); /* Start off-screen to the right */
+  animation: slideInFromRight 0.6s ease forwards;
+}
+
+/* Delay each card's animation for a staggered effect */
+.card2:nth-child(1) { animation-delay: 0.1s; }
+.card2:nth-child(2) { animation-delay: 0.3s; }
+.card2:nth-child(3) { animation-delay: 0.5s; }
+
+/* Keyframes for slide-in animation */
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Card image and text styles (keep your existing 70/30 split) */
+.card2 img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  border-radius: 4px 4px 0 0;
+  flex-shrink: 0;
+}
+
+.card2-title {
+  font-weight: bold;
+  text-align: center !important;
+  font-size: 1.8rem !important;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+.card2-subtitle {
+  color: var(--color-text-secondary, #666);
+  text-align: center !important;
+  font-size: 1.1rem !important;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.card2:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 15px rgba(255, 107, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+  .card2 {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .card2 {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: 320px;
+  }
+  
+  /* Faster animation on mobile */
+  .cards-container2 {
+    transform: translateX(30px); /* Less distance on mobile */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  @keyframes slideInFromRight {
+    0% {
+      opacity: 0;
+      transform: translateX(50px); /* Less movement on mobile */
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+
+/* Slow down container animation */
+.cards-container2 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* Slowed from 0.8s to 1.2s */
+}
+
+/* When container is in view */
+.cards-container2.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Individual card animation - slower */
+.card2 {
+  flex: 1 1 calc(33.333% - 20px);
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  color: var(--color-text-primary);
+  transition: transform var(--transition-fast) ease, box-shadow var(--transition-fast) ease;
+  min-width: 300px;
+  max-width: 350px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  
+  opacity: 0;
+  transform: translateX(100px);
+  animation: slideInFromRight 0.9s ease forwards; /* Slowed from 0.6s to 0.9s */
+}
+
+/* Longer delays for a more gradual staggered effect */
+.card2:nth-child(1) { animation-delay: 0.2s; } /* Was 0.1s */
+.card2:nth-child(2) { animation-delay: 0.5s; } /* Was 0.3s */
+.card2:nth-child(3) { animation-delay: 0.8s; } /* Was 0.5s */
+
+/* Keyframes for slide-in animation */
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+/* Extra slow version */
+.cards-container2 {
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.card2 {
+  animation: slideInFromRight 1.2s ease-out forwards; /* Even slower */
+}
+
+.card2:nth-child(1) { animation-delay: 0.3s; }
+.card2:nth-child(2) { animation-delay: 0.7s; }
+.card2:nth-child(3) { animation-delay: 1.1s; }
+
+/* Add easing for more natural motion */
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(150px); /* Start further to the right */
+  }
+  70% {
+    opacity: 0.7;
+    transform: translateX(-10px); /* Slight overshoot effect */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.card2-title,
+.card2-subtitle {
+  width: 100%;
+  text-align: center !important;
+}
+
+/* Target the p5 elements inside the cards */
+.card2-title p5,
+.card2-subtitle p5 {
+  display: block;
+  width: 100%;
+  text-align: inherit !important;
 }
