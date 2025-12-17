@@ -1,6 +1,141 @@
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".navbar a");
 
+
+
+// ===== LANGUAGE MANAGEMENT =====
+let currentLanguageData = {};
+
+// Create a function that runs after language is loaded
+function setupVerMasButtons() {
+  const verMasBtns = document.querySelectorAll('.ver-mas-btn');
+  
+  verMasBtns.forEach(button => {
+    // Set initial text based on current language AND current state
+    const isExpanded = button.classList.contains('expanded');
+    button.textContent = getTextFromKey(isExpanded ? 'misc.vermenos' : 'misc.vermas');
+    
+    button.addEventListener('click', function() {
+      const servicio = this.closest('.servicio');
+      const hiddenText = servicio.querySelector('.hidden-text');
+      
+      const isHiddenTextVisible = hiddenText.classList.contains('show');
+      
+      if (!isHiddenTextVisible) {
+        hiddenText.style.display = 'inline';
+        setTimeout(() => {
+          hiddenText.classList.add('show');
+        }, 10);
+        
+        this.textContent = getTextFromKey('misc.vermenos');
+        this.classList.add('expanded');
+        servicio.style.minHeight = 'auto';
+      } else {
+        hiddenText.classList.remove('show');
+        setTimeout(() => {
+          hiddenText.style.display = 'none';
+        }, 300);
+        
+        this.textContent = getTextFromKey('misc.vermas');
+        this.classList.remove('expanded');
+      }
+    });
+  });
+}
+
+async function loadLanguage(lang) {
+  try {
+    const res = await fetch(`lang/${lang}.json`);
+    if (!res.ok) throw new Error(`Language file not found: ${lang}.json`);
+    const data = await res.json();
+    currentLanguageData = data; // store globally
+
+    // Replace text for all elements with data-key
+    document.querySelectorAll("[data-key]").forEach(el => {
+      const key = el.dataset.key.split(".");
+      let value = data;
+      for (const k of key) {
+        value = value?.[k];
+        if (value === undefined) {
+          console.warn(`Missing translation key: ${el.dataset.key}`);
+          return;
+        }
+      }
+      if (value) el.textContent = value;
+    });
+
+    // Update buttons with data-key attributes
+    document.querySelectorAll("button[data-key]").forEach(button => {
+      const key = button.dataset.key.split(".");
+      let value = data;
+      for (const k of key) {
+        value = value?.[k];
+        if (value === undefined) return;
+      }
+      if (value && button.querySelector('.btn-text')) {
+        button.querySelector('.btn-text').textContent = value;
+      }
+    });
+
+    // Store language preference in localStorage
+    localStorage.setItem('preferredLanguage', lang);
+    
+    // Update language selector value
+    const languageSelector = document.getElementById("language-selector");
+    if (languageSelector) {
+      languageSelector.value = lang;
+    }
+    
+    console.log(`Language loaded: ${lang}`);
+    setupVerMasButtons();
+
+  } catch (error) {
+    console.error('Error loading language:', error);
+    // Fallback to default language
+    if (lang !== 'esp') {
+      console.log('Falling back to Spanish');
+      loadLanguage('esp');
+    }
+  }
+}
+
+// Helper to get value from currentLanguageData by key
+function getTextFromKey(key) {
+  const parts = key.split(".");
+  let value = currentLanguageData;
+  for (const p of parts) {
+    if (value?.[p] !== undefined) value = value[p];
+    else {
+      console.warn(`Missing translation key: ${key}`);
+      return key; // fallback to key name
+    }
+  }
+  return value || key;
+}
+
+// Load initial language
+function initLanguage() {
+  const savedLang = localStorage.getItem('preferredLanguage');
+  const browserLang = navigator.language.split('-')[0]; // 'en' or 'es'
+  const defaultLang = savedLang || (browserLang === 'es' ? 'esp' : 'eng');
+  loadLanguage(defaultLang);
+}
+
+// Language selector
+document.addEventListener('DOMContentLoaded', () => {
+  const languageSelector = document.getElementById("language-selector");
+  if (languageSelector) {
+    languageSelector.addEventListener("change", (e) => {
+      const selectedLang = e.target.value; // "esp" or "eng"
+      loadLanguage(selectedLang);
+    });
+  }
+  
+  // Initialize language
+  initLanguage();
+});
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('#navbar a');
@@ -250,28 +385,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// === Helper to get text from p5[data-key] ===
-function getTextFromKey(key) {
-  const el = document.querySelector(`p5[data-key="${key}"]`);
-  return el ? el.textContent : key;
-}
-// === EmailJS Configuration ===
-// const EMAILJS_CONFIG = {
-//   publicKey: 'YOUR_PUBLIC_KEY_HERE',
-//   serviceId: 'YOUR_SERVICE_ID_HERE',
-//   contactTemplateId: 'YOUR_CONTACT_TEMPLATE_ID_HERE',
-//   joinTemplateId: 'YOUR_JOIN_TEMPLATE_ID_HERE'
-// };
 
-// Initialize EmailJS
-// (function() {
-//   if (EMAILJS_CONFIG.publicKey && EMAILJS_CONFIG.publicKey !== 'YOUR_PUBLIC_KEY_HERE') {
-//     emailjs.init(EMAILJS_CONFIG.publicKey);
-//     console.log('EmailJS initialized for frontend');
-//   } else {
-//     console.warn('EmailJS not configured for frontend');
-//   }
-// })();
+
 
 // === Contact Form (Frontend EmailJS) ===
 // Contact Form Submission
@@ -338,13 +453,6 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     submitButton.querySelector('.btn-text').textContent = originalText;
   }
 });
-
-//   // Modal close
-//   closeModal.addEventListener("click", () => (modal.style.display = "none"));
-//   window.addEventListener("click", (e) => {
-//     if (e.target === modal) modal.style.display = "none";
-//   });
-// });
 
 
 
@@ -487,61 +595,6 @@ document.addEventListener('keydown', function(event) {
   }
 });
 
-// Close modals when clicking outside
-// window.addEventListener('click', function(event) {
-//   const contactModal = document.getElementById('confirmation-modal');
-//   const joinModal = document.getElementById('join-confirmation-modal');
-  
-//   if (event.target === contactModal) {
-//     contactModal.style.display = 'none';
-//   }
-//   if (event.target === joinModal) {
-//     joinModal.style.display = 'none';
-//   }
-// });
-
-
-// Toggle para "Ver más" en servicios
-document.addEventListener('DOMContentLoaded', function() {
-  // Seleccionar todos los botones "Ver más"
-  const verMasBtns = document.querySelectorAll('.ver-mas-btn');
-  
-  verMasBtns.forEach(button => {
-    button.addEventListener('click', function() {
-      // Encontrar el servicio padre
-      const servicio = this.closest('.servicio');
-      // Encontrar el texto oculto dentro de este servicio
-      const hiddenText = servicio.querySelector('.hidden-text');
-      const visibleText = servicio.querySelector('.visible-text');
-      
-      // Alternar la visibilidad
-      if (hiddenText.style.display === 'none' || !hiddenText.classList.contains('show')) {
-        // Mostrar texto oculto
-        hiddenText.style.display = 'inline';
-        setTimeout(() => {
-          hiddenText.classList.add('show');
-        }, 10);
-        
-        // Cambiar texto del botón
-        this.textContent = 'Ver menos';
-        this.classList.add('expanded');
-        
-        // Ajustar la altura del servicio
-        servicio.style.minHeight = 'auto';
-      } else {
-        // Ocultar texto
-        hiddenText.classList.remove('show');
-        setTimeout(() => {
-          hiddenText.style.display = 'none';
-        }, 300);
-        
-        // Cambiar texto del botón
-        this.textContent = 'Ver más';
-        this.classList.remove('expanded');
-      }
-    });
-  });
-});
 
 
 
@@ -551,41 +604,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-let currentLanguageData = {};
 
-async function loadLanguage(lang) {
-  const res = await fetch(`lang/${lang}.json`);
-  const data = await res.json();
-  currentLanguageData = data; // store globally
-
-  // Replace text for all elements with data-key
-  document.querySelectorAll("[data-key]").forEach(el => {
-    const key = el.dataset.key.split(".");
-    let value = data;
-    for (const k of key) value = value[k];
-    if (value) el.textContent = value;
-  });
-}
-
-// Helper to get value from currentLanguageData by key
-function getTextFromKey(key) {
-  const parts = key.split(".");
-  let value = currentLanguageData;
-  for (const p of parts) {
-    if (value[p] !== undefined) value = value[p];
-    else return key; // fallback
-  }
-  return value;
-}
-
-// Default language
-loadLanguage("esp");
-
-// Language selector
-document.getElementById("language-selector").addEventListener("change", (e) => {
-  const selectedLang = e.target.value; // "esp" or "eng"
-  loadLanguage(selectedLang);
-});
 
 
 
@@ -650,58 +669,58 @@ const carouselData = [
     {
         id: 1,
         title: "BHP",
-        description: "Global mining and metals company focusing on resources",
+        getDescription: () => getTextFromKey('exitos.bhp'),
         imageUrl: "images/bhp.png",
-        imageUrl2: "images/bhp.png"
+        imageUrl2: "images/bhp2.png"
     },
     {
         id: 2,
         title: "Codelco", 
-        description: "Chilean state-owned copper mining company",
+        getDescription: () => getTextFromKey('exitos.codelco'),
         imageUrl: "images/codelco.png",
         imageUrl2: "images/codelco2.png"
     },
     {
         id: 3,
         title: "Cerro Matoso",
-        description: "Another mining company with significant operations",
+        getDescription: () => getTextFromKey('exitos.cerromatoso'),
         imageUrl: "images/cerro matoso.png",
-        imageUrl2: "images/cerro matoso.png"
+        imageUrl2: "images/Cerro matoso2.png"
     },
     {
         id: 4,
         title: "Coca-Cola",
-        description: "Leading producer of precious metals and minerals",
+        getDescription: () => getTextFromKey('exitos.cocacola'),
         imageUrl: "images/cocacola.png",
-        imageUrl2: "images/cocacola.png"
+        imageUrl2: "images/cocacola2.png"
     },
     {
         id: 5,
         title: "Glencore",
-        description: "Diversified natural resources company",
+        getDescription: () => getTextFromKey('exitos.glencore'),
         imageUrl: "images/glencore.png",
-        imageUrl2: "images/glencore.png"
+        imageUrl2: "images/glencore2.png"
     },
     {
         id: 6,
         title: "Antapaccay",
-        description: "Specialized in sustainable mining practices",
+        getDescription: () => getTextFromKey('exitos.antapaccay'),
         imageUrl: "images/antapaccay.png",
-        imageUrl2: "images/antapaccay.png"
+        imageUrl2: "images/antapaccay2.png"
     },
     {
         id: 7,
         title: "Spence",
-        description: "Specialized in sustainable mining practices",
+        getDescription: () => getTextFromKey('exitos.spence'),
         imageUrl: "images/spence.png",
-        imageUrl2: "images/spence.png"
+        imageUrl2: "images/spence2.png"
     },
     {
         id: 8,
         title: "Sierra Gorda",
-        description: "Specialized in sustainable mining practices",
+        getDescription: () => getTextFromKey('exitos.sierragorda'),
         imageUrl: "images/sierra gorda.png",
-        imageUrl2: "images/sierra gorda.png"
+        imageUrl2: "images/sierra gorda2.png"
     }
 
 
@@ -761,7 +780,7 @@ function updateMainDisplay() {
         mainImage.src = slide.imageUrl2;
         mainImage.alt = slide.title;
         mainTitle.textContent = slide.title;
-        mainDescription.textContent = slide.description;
+        mainDescription.textContent = slide.getDescription();
         mainImage.style.opacity = '1';
     }, 300);
     

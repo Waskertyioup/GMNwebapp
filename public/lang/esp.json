@@ -182,6 +182,24 @@
     "sent": "Enviar",
     "sending": "Enviando...",
     "confirmation": "¡Gracias! Tu mensaje ha sido enviado correctamente."
+  },
+
+
+  "misc": {
+    "vermas": "Ver más",
+    "vermenos": "Ver menos",
+    "conocenos": "Conócenos más"
+  },
+
+  "exitos": {
+    "bhp": "Más de X proyectos desarrollados: productividad, optimización y gestión de activos, generando un valor agregado aproximado de $ XXXX MUSD.",
+    "codelco": "Empresa estatal chilena dedicada a la explotación minera cuprífera. Hemos desarrado con éxito más de X proyectos, impulsando estandares de operación y logística, los cuales han logrado un aumento en la productividad del X%.",
+    "cerromatoso": "Se han desarrollado modelos de datos y dashboars automatizados, los cuales han generado una reducción de X horas operacionales a la semana para el personal beneficiado.",
+    "cocacola": "",
+    "glencore": "",
+    "antapaccay": "",
+    "spence": "",
+    "sierragorda": ""
   }
 
 
