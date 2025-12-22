@@ -684,7 +684,7 @@ const carouselData = [
         id: 3,
         title: "Cerro Matoso",
         getDescription: () => getTextFromKey('exitos.cerromatoso'),
-        imageUrl: "images/cerro matoso.png",
+        imageUrl: "images/Cerro matoso.png",
         imageUrl2: "images/Cerro matoso2.png"
     },
     {

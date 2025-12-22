@@ -1492,12 +1492,7 @@ footer {
   border-radius: 4px; 
 }
 
-.card2-title {
-  font-weight: bold;
-  text-align: center !important;
-  font-size: 4rem !important;
-  color: var(--color-text-primary);
-}
+
 
 .card2-subtitle {
   color: var(--color-text-primary);
@@ -2342,20 +2337,15 @@ footer {
   flex: 0 0 auto; /* Don't grow or shrink */
 }
 
-.card2-title {
-  font-weight: bold;
-  text-align: center !important;
-  font-size: 1.8rem !important; /* Reduced from 4rem */
-  color: var(--color-text-primary);
-  margin: 15px 15px 5px 15px;
-  line-height: 1.2;
-}
+
+
+
 
 .card2-subtitle {
   color: var(--color-text-secondary, #666);
   text-align: center !important;
   font-size: 1.1rem !important; /* Reduced from 2rem */
-  margin: 0 15px 15px 15px;
+  margin: 0 15px;
   line-height: 1.4;
   flex-grow: 1; /* Push content to top */
 }
@@ -2390,6 +2380,7 @@ footer {
   .card2-title {
     font-size: 1.6rem !important;
     margin: 12px 12px 4px 12px;
+    margin-bottom: 0rem !important;
   }
   
   .card2-subtitle {
@@ -2409,6 +2400,7 @@ footer {
   
   .card2-title {
     font-size: 1.4rem !important;
+    margin-bottom: 0rem !important;
   }
   
   .card2-subtitle {
@@ -2505,15 +2497,17 @@ footer {
 .card2-title {
   font-weight: bold;
   text-align: center !important;
-  font-size: 1.8rem !important;
+  font-size: 2.5rem !important; /* Reduced from 4rem */
   color: var(--color-text-primary);
+  margin: 0px 15px;
+  margin-bottom: 0rem !important;
   line-height: 1.2;
 }
 
 .card2-subtitle {
   color: var(--color-text-secondary, #666);
   text-align: center !important;
-  font-size: 1.1rem !important;
+  font-size: 2rem !important;
   line-height: 1.4;
   flex-grow: 1;
 }
