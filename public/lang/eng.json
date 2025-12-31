@@ -17,31 +17,29 @@
   "header_subtitle": "Specialized in Physical Asset Management with over 20 years of experience, transforming industrial operations through innovative solutions and cutting-edge technology.",
 
 
-
   "overview": {
     "title": "GMN 2025",
-    "subtitle": "\"Solo en este año, GMN ha ayudado a las empresas a ahorrar más de --- millones de dólares.\"",
-    "1st": "Valor creado por GMN",
-    "1st_par1": "+20 años de experiencia en minería y sectores intensivos en capital",
-    "1st_par2": "+8 operaciones mineras apoyadas en Chile y Latinoamérica",
-    "1st_par3": "+200.000 Órdenes de Trabajo regularizadas y optimizadas en SAP PM",
-    "1st_par4": "Experiencia real en proyectos de alta criticidad y gran escala",
-    "casosexito": "Ver nuestros casos de éxito",
+    "subtitle": "\"This year alone, GMN has helped companies save over --- million dollars.\"",
+    "1st": "Value created by GMN",
+    "1st_par1": "+20 years of experience in mining and capital-intensive sectors",
+    "1st_par2": "+8 mining operations supported in Chile and Latin America",
+    "1st_par3": "+200,000 Work Orders regularized and optimized in SAP PM",
+    "1st_par4": "Real experience in highly critical and large-scale projects",
+    "casosexito": "See our success stories",
     "card1": "$200",
-    "card1_sub": "MILLONES",
+    "card1_sub": "MILLIONS",
     "card2": "",
-    "card2_sub": "reducción de costos",
+    "card2_sub": "COST REDUCTION",
     "card3": "24%",
-    "card3_sub": "más eficiencia"
+    "card3_sub": "HIGHER EFFICIENCY"
   },
 
 
-
   "news": {
-    "title": "News",
-    "1st": "Sobre la baja de productividad",
-    "1st_par": "Sergio Adauy, director ejecutivo de la empresa local de Antofagasta, GMN, en relación a los desafíos que enfrenta la industria minera en términos de competitividad. Este tema ha cobrado relevancia en medio del aumento de los costos de producción, así como otros factores externos como la disminución de la calidad de los minerales y la escasez de recursos hídricos. Sergio Adauy, director ejecutivo de la empresa local de Antofagasta, GMN, en relación a los desafíos que enfrenta la industria minera en términos de competitividad. Este tema ha cobrado relevancia en medio del aumento de los costos de producción, así como otros factores externos como la disminución de la calidad de los minerales y la escasez de recursos hídricos.",
-    "2nd": "Innovacion",
+    "title": "Media",
+    "1st": "About the decline in productivity",
+    "1st_par": "Sergio Adauy, CEO of Antofagasta-based company GMN, on the challenges facing the mining industry in terms of competitiveness. This issue has become increasingly relevant amid rising production costs and other external factors such as declining mineral quality and water scarcity. Sergio Adauy, CEO of the local Antofagasta company GMN, on the challenges facing the mining industry in terms of competitiveness. This issue has become increasingly relevant amid rising production costs and other external factors such as declining mineral quality and water scarcity.",
+    "2nd": "Innovation",
     "2nd_par": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "3rd": "Montos",
     "3rd_par": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -183,6 +181,24 @@
     "sent": "Enviar",
     "sending": "Enviando...",
     "confirmation": "¡Gracias! Tu mensaje ha sido enviado correctamente."
+  },
+
+
+  "misc": {
+    "vermas": "Ver más",
+    "vermenos": "Ver menos",
+    "conocenos": "Conócenos más"
+  },
+
+  "exitos": {
+    "bhp": "Más de X proyectos desarrollados: productividad, optimización y gestión de activos, generando un valor agregado aproximado de $ XXXX MUSD.",
+    "codelco": "Empresa estatal chilena dedicada a la explotación minera cuprífera. Hemos desarrado con éxito más de X proyectos, impulsando estandares de operación y logística, los cuales han logrado un aumento en la productividad del X%.",
+    "cerromatoso": "Se han desarrollado modelos de datos y dashboars automatizados, los cuales han generado una reducción de X horas operacionales a la semana para el personal beneficiado.",
+    "cocacola": "",
+    "glencore": "",
+    "antapaccay": "",
+    "spence": "",
+    "sierragorda": ""
   }
 
 
