@@ -216,6 +216,15 @@ app.post("/send-join-mail", upload.single("resume"), async (req, res) => {
   }
 });
 
+
+
+
+
+
+
+
+
+
 // === Health check endpoint ===
 app.get("/health", (req, res) => {
   res.json({ 
@@ -238,10 +247,60 @@ app.use((err, req, res, next) => {
   next(err);
 });
 
-// === Serve frontend files ===
-app.get(/.*/, (req, res) => {
+// // === Serve frontend files ===
+// app.get(/.*/, (req, res) => {
+//   res.sendFile(path.join(__dirname, "public", "index.html"));
+// });
+app.use(express.static(path.join(__dirname, "public")));
+
+// app.get(/.*/, (req, res) => {
+//   res.sendFile(path.join(__dirname, "public", "index.html"));
+// });
+
+
+
+
+
+
+// === Replace with this routing order: ===
+
+// 1. Health check
+app.get("/health", (req, res) => {
+  res.json({ status: "ok", timestamp: new Date().toISOString() });
+});
+
+// 2. API Routes (MUST come before static files)
+app.post("/send-mail", async (req, res) => { /* your contact form handler */ });
+app.post("/send-join-mail", upload.single("resume"), async (req, res) => { /* your join form handler */ });
+
+// 3. Static files
+app.use(express.static(path.join(__dirname, "public")));
+
+// 4. Specific HTML routes (for multi-page app)
+app.get("/contact.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "contact.html"));
+});
+
+app.get("/join.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "join.html"));
+});
+
+// 5. SPA routes (if using single-page app features)
+app.get(["/", "/home", "/services", "/about", "/philosophy"], (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
+
+// 6. 404 handler
+app.use((req, res) => {
+  res.status(404).send("Not Found");
+});
+
+
+
+
+
+
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

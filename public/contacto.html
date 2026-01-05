@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Scroll</title>
+  <link rel="stylesheet" href="./styles.css"/>
+  <script src="./script.js" defer></script>
+</head>
+<body>
+
+
+<header id="navbar">
+  <div class="navbar-container">
+
+    <!-- Left: Logo -->
+    <div class="navbar-logo">
+      <img src="images/logo.png" alt="GMN Group Logo">
+      <div class="navbar-logo-text">
+        <h1>GMN Group</h1>
+        <span><p5 data-key="navbar0"></p5></span>
+      </div>
+    </div>
+
+    <!-- Center: Navigation -->
+    <nav class="navbar-nav">
+      <ul>
+        <li><a href="#inicio"><p5 data-key="navbar1"></p5></a></li>
+        <li><a href="#overview"><p5 data-key="overview.title"></p5></a></li>
+        <li><a href="#news"><p5 data-key="news.title"></p5></a></li>
+        <li><a href="#quienes"><p5 data-key="navbar2"></p5></a></li>
+        <li><a href="#quehacemos-intro"><p5 data-key="navbar3"></p5></a></li>
+        <li><a href="#logros"><p5 data-key="navbar4"></p5></a></li>
+        <li><a href="#filosofia"><p5 data-key="navbar5"></p5></a></li>
+        <li><a href="#contacto"><p5 data-key="navbar6"></p5></a></li>
+      </ul>
+    </nav>
+
+    <!-- Right: Language & Toggle -->
+    <div class="navbar-right">
+      <button class="navbar-toggle" aria-label="Toggle navigation">☰</button>
+      <div class="navbar-lang">
+        <img src="images/world_icon.png" alt="Idioma" class="lang-icon">
+        <select id="language-selector">
+          <option value="esp" selected>ESP</option>
+          <option value="eng">ENG</option>
+          <option value="prt">PRT</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+
+
+
+<!-- CONTACTO -->
+<section id="contacto" class="slide">
+  <div class="margener">
+    
+    <!-- Title above everything -->
+    <div class="contact-header">
+      <h2><span class="highlight-orange"><p5 data-key="contact.title"></p5></span></h2>
+      <h3 class="contact-intro"><p5 data-key="contact.intro"></p5></h3>
+    </div>
+
+    <!-- Two columns below the title -->
+    <div class="contact-columns">
+      <!-- Left column: Contact Form -->
+      <div class="contact-form-column">
+        <div class="form-card">
+          <form id="contact-form">
+            <div class="form-group">
+              <label><p5 data-key="contact.name"></p5></label>
+              <input type="text" name="nombre" required>
+            </div>
+
+            <div class="form-group">
+              <label><p5 data-key="contact.company"></p5></label>
+              <input type="text" name="empresa" required>
+            </div>
+
+            <div class="form-group">
+              <label><p5 data-key="contact.email"></p5></label>
+              <input type="email" name="correo" required>
+            </div>
+
+            <div class="form-group">
+              <label><p5 data-key="contact.phone"></p5></label>
+              <input type="text" name="telefono">
+            </div>
+
+            <div class="form-group">
+              <label><p5 data-key="contact.country"></p5></label>
+              <input type="text" name="pais" required>
+            </div>
+
+            <div class="form-group">
+              <label for="requerimiento"><p5 data-key="contact.details"></p5></label>
+              <textarea 
+                id="requerimiento" 
+                name="requerimiento" 
+                rows="4" 
+                cols="50" 
+                required
+                placeholder="Describe tu requerimiento aquí..."
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>
+                <input type="checkbox" name="reunion">
+                <p5 data-key="contact.specialist"></p5>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn-send" 
+                      data-key-default="contact.sent" 
+                      data-key-sending="contact.sending">
+                <span class="btn-text"><p5 data-key="contact.sent"></p5></span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Right column: Contact Info + Google Maps -->
+      <div class="contact-info-column">
+        <div class="info-card">
+          <h3>Información de Contacto</h3>
+          
+          <div class="info-section">
+            <div class="info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div class="info-content">
+              <h4>Email</h4>
+              <p><a href="mailto:gmn@gmngroup.cl" class="contact-link">gmn@gmngroup.cl</a></p>
+            </div>
+          </div>
+
+          <div class="info-section">
+            <div class="info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="info-content">
+              <h4>Dirección</h4>
+              <p>Gral. Manuel Baquedano 239, Of. 203</p>
+              <p>Antofagasta, Chile</p>
+            </div>
+          </div>
+
+          <div class="info-section">
+            <div class="info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="info-content">
+              <h4>Horario</h4>
+              <p><strong>Lunes a Viernes</strong></p>
+              <p>09:00 a 18:30 hrs</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Maps -->
+        <div class="map-container">
+          <div class="map-wrapper">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.336395722355!2d-70.39773462462867!3d-23.556661261392024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96ae2d667d3ad0a9%3A0xccd8cf5eaa8a4400!2sGeneral%20Manuel%20Baquedano%20239%2C%201240010%20Antofagasta%2C%20Antofagasta%2C%20Chile!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+              width="100%"
+              height="250"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Ubicación: General Manuel Baquedano 239, Antofagasta, Chile">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- Modal de confirmación -->
+<div id="confirmation-modal" class="modal">
+  <div class="modal-content">
+    <p><p5 data-key="contact.confirmation"></p5></p>
+    <button id="close-modal">Cerrar</button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+  <footer id="footer" class="footer">
+    <div class="footer-content">
+      <p>© 2025 GMN Group. All rights reserved.</p>
+      <div class="socials">
+        <a href="#"><span class="highlight-orange">LinkedIn</span></a> |
+        <a href="#"><span class="highlight-orange">Twitter</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="contact-script.js"></script>
+</body>
+</html>
+
