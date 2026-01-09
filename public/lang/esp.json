@@ -29,7 +29,7 @@
     "1st_par5": "50+ Profesionales altamente capacitados en múltiples áreas.",
     "casosexito": "Ver nuestros casos de éxito",
     "card1": "$200",
-    "card1_sub": "MILLONES",
+    "card1_sub": "MILLONES DE DÓLARES",
     "card2": "18%",
     "card2_sub": "REDUCCIÓN DE COSTOS",
     "card3": "24%",
@@ -150,6 +150,15 @@
 
     "filo4_btn": "Conócenos más"
 
+  },
+
+  "red_contact": {
+    "negocio_1": "¿Buscas una solución a un desafío específico?",
+    "negocio_2": "Te ayudamos a analizarlo y resolverlo de forma eficiente.",
+    "negocio_3": "Contáctanos",
+    "trabajo_1": "¿Te apasiona resolver problemas?",
+    "trabajo_2": "Trabaja con nosotros en proyectos reales y de alto impacto.",
+    "trabajo_3": "Conversemos"
   },
   
   "contact": {

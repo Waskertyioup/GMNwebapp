@@ -7,41 +7,266 @@ const navLinks = document.querySelectorAll(".navbar a");
 let currentLanguageData = {};
 
 // Create a function that runs after language is loaded
+// function setupVerMasButtons() {
+//   const verMasBtns = document.querySelectorAll('.ver-mas-btn');
+  
+//   verMasBtns.forEach(button => {
+//     // Set initial text based on current language AND current state
+//     const isExpanded = button.classList.contains('expanded');
+//     button.textContent = getTextFromKey(isExpanded ? 'misc.vermenos' : 'misc.vermas');
+    
+//     button.addEventListener('click', function() {
+//       const servicio = this.closest('.servicio');
+//       const hiddenText = servicio.querySelector('.hidden-text');
+      
+//       const isHiddenTextVisible = hiddenText.classList.contains('show');
+      
+//       if (!isHiddenTextVisible) {
+//         hiddenText.style.display = 'inline';
+//         setTimeout(() => {
+//           hiddenText.classList.add('show');
+//         }, 10);
+        
+//         this.textContent = getTextFromKey('misc.vermenos');
+//         this.classList.add('expanded');
+//         servicio.style.minHeight = 'auto';
+//       } else {
+//         hiddenText.classList.remove('show');
+//         setTimeout(() => {
+//           hiddenText.style.display = 'none';
+//         }, 300);
+        
+//         this.textContent = getTextFromKey('misc.vermas');
+//         this.classList.remove('expanded');
+//       }
+//     });
+//   });
+// }
 function setupVerMasButtons() {
   const verMasBtns = document.querySelectorAll('.ver-mas-btn');
   
-  verMasBtns.forEach(button => {
-    // Set initial text based on current language AND current state
-    const isExpanded = button.classList.contains('expanded');
-    button.textContent = getTextFromKey(isExpanded ? 'misc.vermenos' : 'misc.vermas');
+  // If no buttons, exit early
+  if (verMasBtns.length === 0) {
+    console.log('No .ver-mas-btn elements found, skipping setup');
+    return;
+  }
+  
+  // Check if modal exists, create it if not
+  let modalServices = document.getElementById('modal-services');
+  
+  if (!modalServices) {
+    console.log('Creating modal-services element');
+    // Create the modal HTML WITH X button at top, NO bottom button
+    const modalHTML = `
+      <div id="modal-services" class="modal-services">
+        <div class="modal-services__overlay"></div>
+        <div class="modal-services__content">
+          <button class="modal-services__close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+          <h3 class="modal-services__title"></h3>
+          <div class="modal-services__body"></div>
+        </div>
+      </div>
+    `;
     
-    button.addEventListener('click', function() {
-      const servicio = this.closest('.servicio');
-      const hiddenText = servicio.querySelector('.hidden-text');
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    modalServices = document.getElementById('modal-services');
+    
+    // Wait a moment for DOM to update
+    setTimeout(() => {
+      setupVerMasButtons();
+    }, 100);
+    return;
+  }
+  
+  // Now get the modal elements - with null checks
+  const modalServicesOverlay = modalServices.querySelector('.modal-services__overlay');
+  const modalServicesClose = modalServices.querySelector('.modal-services__close'); // This is the X button
+  const modalServicesTitle = modalServices.querySelector('.modal-services__title');
+  const modalServicesBody = modalServices.querySelector('.modal-services__body');
+  
+  // Check if all required elements exist
+  const elements = {
+    modalServicesOverlay,
+    modalServicesClose,
+    modalServicesTitle,
+    modalServicesBody
+  };
+  
+  // Log which elements are missing
+  for (const [name, element] of Object.entries(elements)) {
+    if (!element) {
+      console.error(`Missing element: ${name}`);
+    }
+  }
+  
+  // If any critical element is missing, recreate modal
+  if (!modalServicesOverlay || !modalServicesClose || !modalServicesTitle || !modalServicesBody) {
+    console.error('Critical modal elements missing, recreating modal...');
+    if (modalServices.parentNode) {
+      modalServices.remove();
+    }
+    setTimeout(() => {
+      setupVerMasButtons();
+    }, 100);
+    return;
+  }
+  
+  // Initialize modal as hidden
+  modalServices.style.display = 'none';
+  
+  // Function to open services modal
+  function openServicesModal(servicioElement) {
+    // Get title - look for p5 element with data-key inside h3
+    const titleP5 = servicioElement.querySelector('h3 p5');
+    const titleKey = titleP5?.dataset.key;
+    const title = titleKey ? getTextFromKey(titleKey) : servicioElement.querySelector('h3')?.textContent || '';
+    
+    // Get visible text - look for all p5 elements in visible-text
+    const visibleTextP5s = servicioElement.querySelectorAll('.visible-text p5');
+    let visibleText = '';
+    visibleTextP5s.forEach(p5 => {
+      const key = p5.dataset.key;
+      if (key) {
+        visibleText += getTextFromKey(key) + '<br><br>';
+      }
+    });
+    visibleText = visibleText.replace(/(<br><br>)+$/, '');
+    
+    // Get hidden text - look for all p5 elements in hidden-text
+    const hiddenTextP5s = servicioElement.querySelectorAll('.hidden-text p5');
+    let hiddenText = '';
+    hiddenTextP5s.forEach(p5 => {
+      const key = p5.dataset.key;
+      if (key) {
+        hiddenText += getTextFromKey(key) + '<br><br>';
+      }
+    });
+    hiddenText = hiddenText.replace(/(<br><br>)+$/, '');
+    
+    // Set modal content
+    modalServicesTitle.textContent = title;
+    modalServicesBody.innerHTML = `
+      <div class="modal-services__visible-text">${visibleText}</div>
+      <div class="modal-services__hidden-text">${hiddenText}</div>
+    `;
+    
+    // Show modal with animation
+    modalServices.style.display = 'block';
+    // Prevent reflow for smoother animation
+    requestAnimationFrame(() => {
+      modalServices.classList.add('modal-services--active');
+    });
+    
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+    document.body.style.paddingRight = window.innerWidth - document.documentElement.clientWidth + 'px'; // Prevent layout shift
+    
+    // Trap focus inside modal for accessibility
+    trapFocus(modalServices);
+  }
+  
+  // Function to close services modal
+  function closeServicesModal() {
+    modalServices.classList.remove('modal-services--active');
+    setTimeout(() => {
+      modalServices.style.display = 'none';
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    }, 300);
+  }
+  
+  // Focus trap for accessibility
+  function trapFocus(modal) {
+    const focusableElements = modal.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    
+    if (focusableElements.length === 0) {
+      console.warn('No focusable elements in modal');
+      return;
+    }
+    
+    const firstFocusableElement = focusableElements[0];
+    const lastFocusableElement = focusableElements[focusableElements.length - 1];
+    
+    firstFocusableElement.focus();
+    
+    function handleTabKey(e) {
+      if (e.key !== 'Tab') return;
       
-      const isHiddenTextVisible = hiddenText.classList.contains('show');
-      
-      if (!isHiddenTextVisible) {
-        hiddenText.style.display = 'inline';
-        setTimeout(() => {
-          hiddenText.classList.add('show');
-        }, 10);
-        
-        this.textContent = getTextFromKey('misc.vermenos');
-        this.classList.add('expanded');
-        servicio.style.minHeight = 'auto';
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocusableElement) {
+          e.preventDefault();
+          lastFocusableElement.focus();
+        }
       } else {
-        hiddenText.classList.remove('show');
-        setTimeout(() => {
-          hiddenText.style.display = 'none';
-        }, 300);
-        
-        this.textContent = getTextFromKey('misc.vermas');
-        this.classList.remove('expanded');
+        if (document.activeElement === lastFocusableElement) {
+          e.preventDefault();
+          firstFocusableElement.focus();
+        }
+      }
+    }
+    
+    modal.addEventListener('keydown', handleTabKey);
+  }
+  
+  // Add event listeners to all "Ver más" buttons
+  verMasBtns.forEach(button => {
+    // Remove any existing event listeners first
+    const newButton = button.cloneNode(true);
+    button.parentNode.replaceChild(newButton, button);
+    
+    newButton.addEventListener('click', function() {
+      const servicio = this.closest('.servicio');
+      if (servicio) {
+        openServicesModal(servicio);
       }
     });
   });
+  
+  // Close modal events - with checks
+  if (modalServicesOverlay) {
+    modalServicesOverlay.addEventListener('click', closeServicesModal);
+  }
+  
+  if (modalServicesClose) {
+    modalServicesClose.addEventListener('click', closeServicesModal);
+  }
+  
+  // Close with Escape key
+  function handleEscapeKey(e) {
+    if (e.key === 'Escape' && modalServices.classList.contains('modal-services--active')) {
+      closeServicesModal();
+    }
+  }
+  
+  document.addEventListener('keydown', handleEscapeKey);
+  
+  // Close when clicking outside content (on overlay already handled)
+  modalServices.addEventListener('click', (e) => {
+    if (e.target === modalServices) {
+      closeServicesModal();
+    }
+  });
+  
+  console.log('Modal setup completed successfully');
 }
+
+
+
+
+
+
+
+
+
+
+
 
 async function loadLanguage(lang) {
   try {
@@ -101,13 +326,18 @@ async function loadLanguage(lang) {
 
 // Helper to get value from currentLanguageData by key
 function getTextFromKey(key) {
+  if (!currentLanguageData) {
+    console.warn('No language data loaded');
+    return key;
+  }
+  
   const parts = key.split(".");
   let value = currentLanguageData;
   for (const p of parts) {
-    if (value?.[p] !== undefined) value = value[p];
-    else {
+    value = value?.[p];
+    if (value === undefined) {
       console.warn(`Missing translation key: ${key}`);
-      return key; // fallback to key name
+      return key;
     }
   }
   return value || key;
@@ -258,35 +488,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // //animacion cartas
-// // Function to check if element is in viewport
-// function isInViewport(element) {
-//   const rect = element.getBoundingClientRect();
-//   return (
-//     rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
-//     rect.bottom >= 0
-//   );
-// }
 
-// // Function to handle scroll animation
-// function handleScrollAnimation() {
-//   const cardsContainer = document.querySelector('.cards-container2');
-  
-//   if (cardsContainer && !cardsContainer.classList.contains('in-view')) {
-//     if (isInViewport(cardsContainer)) {
-//       cardsContainer.classList.add('in-view');
-//     }
-//   }
-// }
-
-// // Initialize on page load
-// document.addEventListener('DOMContentLoaded', function() {
-//   // Initial check
-//   handleScrollAnimation();
-  
-//   // Add scroll listener
-//   window.addEventListener('scroll', handleScrollAnimation);
-// });
-// Function to check if element is in viewport
 function isInViewport(element) {
   const rect = element.getBoundingClientRect();
   const windowHeight = window.innerHeight || document.documentElement.clientHeight;
@@ -339,8 +541,8 @@ function initIntersectionObserver() {
         });
       },
       {
-        threshold: 0.2, // Trigger when 20% visible
-        rootMargin: '0px 0px -100px 0px' // Adjust trigger point
+        threshold: 0.9, // Trigger when 20% visible
+        rootMargin: '0px 0px -200px 0px' // Adjust trigger point
       }
     );
     
