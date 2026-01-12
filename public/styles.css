@@ -2650,7 +2650,7 @@ footer {
 
 /* Card Stagger Animation */
 .cards-container2.in-view .card2 {
-  animation: cardAppear 2s ease-out forwards; /* Más lento */
+  animation: cardAppear 1s ease-out forwards; /* Más lento */
   opacity: 0;
   transform: translateY(50px);
 }
@@ -3216,4 +3216,41 @@ footer {
   .modal-services__title {
     font-size: 20px;
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Add these styles to your existing CSS */
+
+.image-column {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-column img {
+  transform: translateX(100px); /* Start position off-screen to the right */
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1),
+              opacity 0.8s ease;
+  will-change: transform, opacity;
+}
+
+/* When visible (you'll add a class via JavaScript) */
+.image-column.visible img {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Optional: Add delay for the second image */
+.image-column.visible img:nth-child(2) {
+  transition-delay: 0.5s;
 }

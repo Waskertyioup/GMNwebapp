@@ -575,6 +575,55 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+// Add this function for image animations
+function animateQueHacemosSection() {
+  const section = document.getElementById('quehacemos-intro');
+  const imageColumn = section.querySelector('.image-column');
+  
+  // Create an Intersection Observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Add visible class when section enters viewport
+        imageColumn.classList.add('visible');
+        
+        // Optional: Stop observing after animation triggers
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.3, // Trigger when 30% of the section is visible
+    rootMargin: '0px 0px -50px 0px' // Adjust trigger point
+  });
+  
+  // Start observing the section
+  observer.observe(section);
+}
+
+// Call this function when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Wait a bit for everything to load
+  setTimeout(animateQueHacemosSection, 500);
+});
+
+// Also call it when navigating to this section (if you're using a single page app)
+// Add this to your navigation handler if you have one:
+/*
+function navigateToQueHacemos() {
+  // Your existing navigation code...
+  
+  // Then trigger animation
+  setTimeout(() => {
+    animateQueHacemosSection();
+  }, 100);
+}
+*/
+
+
+
+
+
+
 
 
 
