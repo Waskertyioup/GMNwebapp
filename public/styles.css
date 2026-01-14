@@ -36,27 +36,38 @@
   
   /* Typography - Reorganized by size */
   --font-size-sm: 0.95rem;
-  --font-size-base: 1rem;
-  --font-size-md: 1.1rem;
+  --font-size-base: 1rem;  
   --font-size-lg: 1.2rem;
   --font-size-xl: 1.5rem;
-  --font-size-xxl: 1.7rem;
-  
   /* Heading sizes - Reorganized */
   --font-size-heading-sm: 1.6rem;
   --font-size-heading-md: 1.7rem;
   --font-size-heading-lg: 3rem;
   --font-size-heading-xl: 2.2rem;
-  --font-size-subheading-lg: 2rem;
-  
+  --font-size-subheading-lg: 2rem;  
   /* Hero sizes */
-  --font-size-hero: 4rem;
-  --font-size-hero-lg: 5rem;
-  --font-size-hero-lg-p1: 1.5rem;
+  --font-size-hero-lg: 6rem;
+  --font-size-hero: 5rem;
   
   /* Transitions */
   --transition-fast: 0.3s;
   --transition-normal: 0.45s;
+
+
+
+
+  /* Desktop font sizes */
+
+
+  
+  /* Layout ratios - DESKTOP DEFAULT */
+  --margener-ratio: 74%;
+  --content-max-width: 1200px;
+  --section-padding: 6rem 2rem 3rem;
+
+
+
+
 }
 
 /* ===== RESET & BASE STYLES ===== */
@@ -120,7 +131,7 @@ html, body {
 }
 
 .slide h4 {
-  font-size: var(--font-size-xxl);
+  font-size: var(--font-size-heading-md);
   font-weight: 600;
   margin-bottom: 0.75rem;
 }
@@ -335,7 +346,7 @@ html, body {
 
 .overlay p1 {
   color: var(--color-text-banner-secondary);
-  font-size: var(--font-size-hero-lg-p1);
+  font-size: var(--font-size-xl);
 }
 
 /* ===== QUE HACEMOS SECTIONS ===== */
@@ -387,25 +398,31 @@ html, body {
 .image-column {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
   width: 100%;
+  min-height: 320px;
 }
 
 .image-column img,
 .accordion-image img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  border-radius: var(--radius-lg);
+  display: block;
   object-fit: contain;
-  max-height: 300px;
+  max-height: 420px;
+}
+
+.image-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .image-column img {
   width: 100%;
-  border: 0px solid var(--color-primary);
-  object-fit: cover;
-  object-position: center;
-  max-height: 420px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 5px;
 }
 
 /* Services Grid */
@@ -428,7 +445,7 @@ html, body {
   padding: var(--spacing-xl) var(--spacing-lg);
   border-radius: var(--radius-xl);
   border: 1px solid var(--color-border);
-  transition: border-color var(--transition-fast) ease, box-shadow var(--transition-fast) ease;
+
   width: 100%;
   min-height: 200px;
   display: flex;
@@ -438,7 +455,7 @@ html, body {
 
 #quehacemos-servicios .servicio:hover {
   border-color: var(--color-primary);
-  box-shadow: 0 4px 15px rgba(255, 107, 0, 0.2);
+
 }
 
 #quehacemos-servicios .servicio h3 {
@@ -492,7 +509,7 @@ html, body {
 /* ===== ACCORDION ===== */
 .accordion {
   width: 100%;
-  max-width: 1200px;
+  max-width: 96%;
   margin: var(--spacing-lg) auto 0;
   border-radius: var(--radius-md);
   background: transparent;
@@ -517,7 +534,7 @@ html, body {
   bottom: 0;
   border-radius: inherit;
   pointer-events: none;
-  box-shadow: 0 0 0 1px var(--color-border);
+
   z-index: 1;
 }
 
@@ -1348,17 +1365,166 @@ footer {
   -ms-hyphens: auto;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== ENHANCED RESPONSIVE TIERED SYSTEM - FIXED ===== */
+
+/* Default: Desktop (1200px and above) */
+
+/* APPLY THE MARGENER RATIO */
+
+/* ========== MEDIA QUERIES WITH EXPLICIT OVERRIDES ========== */
+
+
+  /* Typography - Reorganized by size
+  --font-size-sm: 0.95rem;
+  --font-size-base: 1rem;  
+  --font-size-lg: 1.2rem;
+  --font-size-xl: 1.5rem;
+  /* Heading sizes - Reorganized */
+  /* --font-size-heading-sm: 1.6rem;
+  --font-size-heading-md: 1.7rem;
+  --font-size-heading-lg: 3rem;
+  --font-size-heading-xl: 2.2rem;
+  --font-size-subheading-lg: 2rem;   */
+  /* Hero sizes */
+  /* --font-size-hero-lg: 6rem;
+  --font-size-hero: 5rem; */
+  
+
+
 /* ===== RESPONSIVE DESIGN ===== */
-@media (min-width: 1200px) {
+#quehacemos-intro .image-column {
+    gap: 2rem !important;
+  }
+
+/* Large Desktops (1200px and up) */
+@media (max-width: 1600px) {
   .main-content {
     padding: 0 5%;
   }
+  .overlay {
+    max-width: 60%;
+  }
+  .margener {
+    width: 85% !important;
+  }
+  .two-columns-container{
+    gap: 2rem !important;
+  }
+  #quehacemos-intro .image-column {
+    gap: 2rem !important;
+  }
 }
 
-@media (max-width: 1024px) {
-  .overlay h1 {
-    font-size: 2.3rem;
+
+@media (max-width: 1400px) {
+  .overlay {
+    max-width: 60%;
   }
+  :root {
+    /* Typography - Reorganized by size */
+    --font-size-sm: 0.93rem;
+    --font-size-base: 0.98rem;  
+    --font-size-lg: 1rem;
+    --font-size-xl: 1.2rem;
+    /* Heading sizes - Reorganized */
+    --font-size-heading-sm: 1.3rem;
+    --font-size-heading-md: 1.4rem;
+    --font-size-heading-lg: 2.5rem;
+    --font-size-heading-xl: 2rem;
+    --font-size-subheading-lg: 1.8rem;  
+    /* Hero sizes */
+    --font-size-hero-lg: 5rem;
+    --font-size-hero: 4rem;
+  }
+  .margener {
+    width: 90% !important;
+  }
+  #quehacemos-intro .image-column {
+    gap: 2rem !important;
+  }
+  .card2 {
+    width: 85% !important;
+  }
+}
+
+
+/* Large Tablets and Small Laptops*/
+@media (max-width: 1199px) {
+  :root {
+    /* Typography - Reorganized by size */
+    --font-size-sm: 0.93rem;
+    --font-size-base: 0.98rem;  
+    --font-size-lg: 1rem;
+    --font-size-xl: 1.2rem;
+    /* Heading sizes - Reorganized */
+    --font-size-heading-sm: 1.3rem;
+    --font-size-heading-md: 1.4rem;
+    --font-size-heading-lg: 2.5rem;
+    --font-size-heading-xl: 2rem;
+    --font-size-subheading-lg: 1.8rem;  
+    /* Hero sizes */
+    --font-size-hero-lg: 5rem;
+    --font-size-hero: 4rem;
+  }
+  
+  .margener {
+    width: 85% !important;
+  }
+  
+  .overlay {
+    max-width: 70%;
+  }
+
+  .team-carousel{
+    width: 98% !important;
+  }
+
+  
+  #quehacemos-servicios .servicios-grid{
+    gap: 1rem !important;
+  }
+  #quehacemos-intro .image-column {
+    gap: 1rem !important;
+  }
+  .card2 {
+    width: 100% !important;
+  }
+}
+
+/* Tablets (992px to 1023px) */
+@media (max-width: 1023px) {
+
   
   .card,
   .team-card {
@@ -1369,21 +1535,88 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  .team-carousel {
-    width: 60%;
-    max-width: 500px;
-  }
   
-  .card2 {
-    flex: 1 1 calc(50% - 20px);
-    max-width: calc(50% - 20px);
-  }
+
   
   .contact-columns {
     gap: 40px;
   }
+  .two-columns-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 3rem !important;
+    }
+
 }
 
+@media (max-width: 1023px) {
+  :root {
+    --font-size-hero-lg: 4rem;
+    --font-size-hero: 3.5rem;
+    --font-size-heading-lg: 2.2rem;
+    --font-size-subheading-lg: 1.6rem;
+    --font-size-xl: 1.25rem;
+    --font-size-lg: 1.1rem;
+    
+    --font-size-base: 0.9rem;
+  }
+  
+  .margener {
+    width: 85% !important;
+  }
+  
+  .main-content {
+    padding: 0 3%;
+  }
+  
+  .overlay {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 0 auto;
+    max-width: 90%;
+    width: auto;
+    text-align: center;
+    padding: var(--spacing-lg);
+  }
+  
+  
+  .team-carousel {
+    width: 80%;
+  }
+  
+  .main-display {
+    height: 400px;
+  }
+  
+  .overlay-content {
+    padding: 60px;
+  }
+
+  #quehacemos-intro .quehacemos-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: var(--spacing-xl);
+  }
+  #quehacemos-intro .image-column {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      justify-items: center !important;
+      gap: 1rem !important;
+  }
+  #quehacemos-intro .image-column img {
+    width: 90%;
+  }
+
+  .card2 {
+      width: 90% !important;
+  }
+
+
+}
+
+/* Medium Tablets (768px to 991px) */
 @media (max-width: 992px) {
   .accordion-header {
     padding: 16px 18px;
@@ -1401,6 +1634,21 @@ footer {
 }
 
 @media (max-width: 768px) {
+  :root {
+    --font-size-hero-lg: 3.5rem;
+    --font-size-hero: 3rem;
+    --font-size-heading-lg: 2rem;
+    --font-size-subheading-lg: 1.5rem;
+    --font-size-xl: 1.15rem;
+    --font-size-lg: 1rem;
+    
+    --font-size-base: 0.875rem;
+  }
+  
+  .margener {
+    width: 90% !important;
+  }
+  
   /* Base adjustments */
   .main-content {
     padding: 0 3%;
@@ -1472,9 +1720,6 @@ footer {
     padding: var(--spacing-lg);
   }
 
-  .overlay h1 {
-    font-size: var(--font-size-heading-lg);
-  }
 
   /* Cards & Carousels */
   .card,
@@ -1507,6 +1752,8 @@ footer {
       transform: translateX(0);
     }
   }
+  
+
 
   /* Accordion */
   .accordion {
@@ -1524,13 +1771,11 @@ footer {
   
   .accordion-header {
     padding: 14px 16px;
-    font-size: var(--font-size-md);
     font-weight: 500;
   }
   
   .accordion-header::after {
     margin-left: 10px;
-    font-size: 1em;
   }
   
   .accordion-panel {
@@ -1560,7 +1805,6 @@ footer {
   
   .accordion-text p,
   .accordion-text li {
-    font-size: var(--font-size-lg);
     line-height: 1.6;
     max-width: 100%;
     box-sizing: border-box;
@@ -1580,7 +1824,6 @@ footer {
   .accordion-image,
   .image-column {
     order: 2;
-    margin-top: var(--spacing-md);
   }
   
   .accordion-image img,
@@ -1602,23 +1845,21 @@ footer {
   }
 
   #quehacemos-intro .image-column {
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;   /* centers items horizontally */
+    gap: 1rem;    
   }
 
   #quehacemos-intro .image-column img {
-    width: 45%;
-    max-width: 200px;
+    width: 90%;
   }
   
   #quehacemos-servicios .servicios-grid {
     grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
   }
   
   #quehacemos-servicios .servicio {
-    padding: var(--spacing-lg);
     min-height: auto;
   }
 
@@ -1656,15 +1897,15 @@ footer {
   }
   
   .overlay-content {
-    padding: 25px;
+    padding: 40px;
   }
   
   .overlay-title {
-    font-size: 2em;
+    font-size: 1.5em;
   }
   
   .overlay-description {
-    font-size: 1.1em;
+    font-size: 1em;
   }
   
   .nav-btn {
@@ -1699,7 +1940,6 @@ footer {
   .contact-form-column,
   .contact-info-column {
     width: 100%;
-    padding: 0 15px;
     box-sizing: border-box;
   }
   
@@ -1711,10 +1951,6 @@ footer {
     max-width: 100%;
   }
   
-  .contact-intro {
-    font-size: 1rem;
-    padding: 0 15px;
-  }
   
   .btn-send {
     width: 100%;
@@ -1726,405 +1962,20 @@ footer {
   }
 }
 
-@media (max-width: 600px) {
-  .accordion-header {
-    padding: 14px 16px;
-    font-size: var(--font-size-md);
-  }
-
-  .accordion-panel {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-content {
-    padding: 0 1%;
-  }
-  
-  .overlay h1 {
-    font-size: var(--font-size-heading-md);
-  }
-
-  .overlay p {
-    font-size: var(--font-size-xl);
-  }
-
-  .card,
-  .team-card {
-    flex: 0 0 100%;
-    margin: 0;
-  }
-  
-  .team-carousel {
-    width: 95%;
-    max-width: 350px;
-  }
-  
-  .slide h2 {
-    font-size: var(--font-size-heading-xl);
-  }
-  
-  .slide h3 {
-    font-size: var(--font-size-heading-sm);
-  }
-  
-  .slide p {
-    font-size: var(--font-size-lg);
-  }
-
-  #quehacemos-intro .image-column {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #quehacemos-intro .image-column img {
-    width: 100%;
-    max-width: 300px;
-  }
-  
-  /* Accordion small mobile adjustments */
-  .accordion-header {
-    padding: 12px 10px;
-    font-size: calc(var(--font-size-md) * 0.95);
-  }
-  
-  .accordion-text p,
-  .accordion-text li {
-    font-size: calc(var(--font-size-lg) * 0.95);
-    line-height: 1.7;
-  }
-  
-  .accordion-panel {
-    padding: 0 10px !important;
-  }
-  
-  .accordion-item.active .accordion-panel {
-    padding: 12px 10px 16px !important;
-  }
-  
-  .accordion-text,
-  .text-column {
-    width: calc(100% - 2px) !important;
-    margin-left: 1px;
-    margin-right: 1px;
-  }
-  
-  .accordion-text p,
-  .accordion-text li {
-    padding-right: 1px;
-  }
-  
-  .accordion-image img,
-  .image-column img {
-    max-height: 180px;
-  }
-  
-  .accordion-text ul {
-    margin-left: 1rem;
-    padding-right: 8px;
-  }
-  
-  .linkedin-link {
-    width: 100%;
-    text-align: center;
-    padding: 10px 16px;
-    box-sizing: border-box;
-  }
-  
-  /* Card2 small mobile */
-  .card2 {
-    height: 300px;
-  }
-  
-  .card2-title {
-    font-size: 1.4rem !important;
-    margin-bottom: 0rem !important;
-  }
-  
-  .card2-subtitle {
-    font-size: 0.95rem !important;
-  }
-  
-  .cards-container2 {
-    gap: 10px;
-    padding: 10px;
-  }
-  
-  /* Image Carousel small mobile */
-  .main-display {
-    height: 300px;
-  }
-  
-  .overlay-content {
-    padding: 20px;
-  }
-  
-  .overlay-title {
-    font-size: 1.6em;
-  }
-  
-  .overlay-description {
-    font-size: 1em;
-  }
-  
-  .thumbnail-slide {
-    width: 120px;
-    height: 80px;
-  }
-  
-  /* Contact small mobile */
-  .contact-form-column,
-  .contact-info-column {
-    padding: 0 10px;
-  }
-  
-  .form-card,
-  .info-card {
-    padding: 20px 15px;
-    border-radius: 6px;
-  }
-  
-  .contact-header h2 {
-    font-size: 1.5rem;
-  }
-  
-  .contact-intro {
-    font-size: 0.95rem;
-  }
-  
-  .map-wrapper {
-    height: 200px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===== ENHANCED RESPONSIVE TIERED SYSTEM - FIXED ===== */
-
-/* Default: Desktop (1200px and above) */
-:root {
-  /* Desktop font sizes */
-  --font-size-hero-lg: 6rem;
-  --font-size-hero: 5rem;
-  --font-size-heading-lg: 3rem;
-  --font-size-subheading-lg: 2rem;
-  --font-size-xxl: 1.7rem;
-  --font-size-xl: 1.5rem;
-  --font-size-lg: 1.2rem;
-  --font-size-md: 1.1rem;
-  --font-size-base: 1rem;
-  --font-size-sm: 0.95rem;
-  
-  /* Layout ratios - DESKTOP DEFAULT */
-  --margener-ratio: 74%;
-  --content-max-width: 1200px;
-  --section-padding: 6rem 2rem 3rem;
-}
-
-/* APPLY THE MARGENER RATIO */
-.margener {
-  width: var(--margener-ratio, 74%); /* Fallback to 74% */
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-/* ========== MEDIA QUERIES WITH EXPLICIT OVERRIDES ========== */
-
-/* Large Tablets and Small Laptops (1024px to 1199px) */
-@media (max-width: 1199px) {
-  :root {
-    --font-size-hero-lg: 5rem;
-    --font-size-hero: 4.2rem;
-    --font-size-heading-lg: 2.6rem;
-    --font-size-subheading-lg: 1.8rem;
-    --font-size-xxl: 1.5rem;
-    --font-size-xl: 1.35rem;
-    --font-size-lg: 1.15rem;
-    --font-size-md: 1.05rem;
-    --font-size-base: 0.95rem;
-  }
-  
-  /* EXPLICITLY SET MARGENER FOR THIS BREAKPOINT */
-  .margener {
-    width: 80% !important;
-  }
-  
-  .main-content {
-    padding: 0 4%;
-  }
-  
-  .overlay h1 {
-    font-size: 4.5rem;
-  }
-}
-
-/* Tablets (768px to 1023px) */
-@media (max-width: 1023px) {
-  :root {
-    --font-size-hero-lg: 4rem;
-    --font-size-hero: 3.5rem;
-    --font-size-heading-lg: 2.2rem;
-    --font-size-subheading-lg: 1.6rem;
-    --font-size-xxl: 1.4rem;
-    --font-size-xl: 1.25rem;
-    --font-size-lg: 1.1rem;
-    --font-size-md: 1rem;
-    --font-size-base: 0.9rem;
-  }
-  
-  /* EXPLICITLY SET MARGENER FOR THIS BREAKPOINT */
-  .margener {
-    width: 85% !important;
-  }
-  
-  .main-content {
-    padding: 0 3%;
-  }
-  
-  .overlay {
-    position: relative;
-    left: auto;
-    top: auto;
-    transform: none;
-    margin: 0 auto;
-    max-width: 90%;
-    width: auto;
-    text-align: center;
-    padding: var(--spacing-lg);
-  }
-  
-  .overlay h1 {
-    font-size: 3.5rem;
-  }
-  
-  /* Card adjustments */
-  .card,
-  .team-card {
-    flex: 0 0 calc((100% / 2) - 1rem);
-  }
-  
-  #quehacemos-servicios .servicios-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .team-carousel {
-    width: 80%;
-  }
-  
-  .card2 {
-    flex: 1 1 calc(50% - 20px);
-    max-width: calc(50% - 20px);
-  }
-  
-  /* Image carousel adjustments */
-  .main-display {
-    height: 400px;
-  }
-  
-  .overlay-content {
-    padding: 60px;
-  }
-  
-  .overlay-title {
-    font-size: 1.8em;
-  }
-  
-  .overlay-description {
-    font-size: 1.1em;
-  }
-}
-
-/* Large Mobile (600px to 767px) */
-@media (max-width: 767px) {
-  :root {
-    --font-size-hero-lg: 3.5rem;
-    --font-size-hero: 3rem;
-    --font-size-heading-lg: 2rem;
-    --font-size-subheading-lg: 1.5rem;
-    --font-size-xxl: 1.3rem;
-    --font-size-xl: 1.15rem;
-    --font-size-lg: 1rem;
-    --font-size-md: 0.95rem;
-    --font-size-base: 0.875rem;
-  }
-  
-  /* EXPLICITLY SET MARGENER FOR THIS BREAKPOINT */
-  .margener {
-    width: 90% !important;
-  }
-  
+/* Large Mobile (600px to 768px) */
+@media (max-width: 768px) {
   .main-content {
     padding: 0 2%;
   }
   
-  /* Hero adjustments */
   .overlay h1 {
     font-size: 3rem;
   }
   
   /* Cards & Carousels */
-  .card,
-  .team-card {
-    flex: 0 0 85%;
-  }
   
   .team-carousel {
     width: 90%;
-    grid-template-columns: 1fr;
-  }
-  
-  .card2 {
-    flex: 1 1 100%;
-    max-width: 100%;
-    height: 320px;
-  }
-  
-  .card2-title {
-    font-size: 2rem !important;
-  }
-  
-  .card2-subtitle {
-    font-size: 1.5rem !important;
-  }
-  
-  /* Accordion adjustments */
-  .accordion-header {
-    padding: 14px 16px;
-    font-size: var(--font-size-lg);
-  }
-  
-  .accordion-text p,
-  .accordion-text li {
-    font-size: var(--font-size-lg);
-  }
-  
-  /* Services grid */
-  #quehacemos-servicios .servicios-grid {
     grid-template-columns: 1fr;
   }
   
@@ -2132,17 +1983,19 @@ footer {
   .main-display {
     height: 300px;
   }
-  
-  .overlay-content {
-    padding: 40px;
+    #quehacemos-intro .quehacemos-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: var(--spacing-xl);
   }
-  
-  .overlay-title {
-    font-size: 1.5em;
+  #quehacemos-intro .image-column {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      justify-items: center !important;
+      gap: 1rem !important;
   }
-  
-  .overlay-description {
-    font-size: 1em;
+  #quehacemos-intro .image-column img {
+    width: 90%;
   }
 }
 
@@ -2153,14 +2006,12 @@ footer {
     --font-size-hero: 2.5rem;
     --font-size-heading-lg: 1.8rem;
     --font-size-subheading-lg: 1.4rem;
-    --font-size-xxl: 1.2rem;
     --font-size-xl: 1.05rem;
     --font-size-lg: 0.95rem;
-    --font-size-md: 0.9rem;
+    
     --font-size-base: 0.85rem;
   }
   
-  /* EXPLICITLY SET MARGENER FOR THIS BREAKPOINT */
   .margener {
     width: 92% !important;
   }
@@ -2202,17 +2053,26 @@ footer {
   }
 }
 
-/* Small Mobile (360px to 479px) */
-@media (max-width: 479px) {
+@media (max-width: 600px) {
+  .accordion-header {
+    padding: 14px 16px;
+  }
+
+  .accordion-panel {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 480px) {
   :root {
     --font-size-hero-lg: 2.5rem;
     --font-size-hero: 2rem;
     --font-size-heading-lg: 1.6rem;
     --font-size-subheading-lg: 1.3rem;
-    --font-size-xxl: 1.1rem;
     --font-size-xl: 1rem;
     --font-size-lg: 0.9rem;
-    --font-size-md: 0.85rem;
+    
     --font-size-base: 0.8rem;
     
     /* Adjust spacing for mobile */
@@ -2224,7 +2084,6 @@ footer {
     --spacing-xxl: 2rem;
   }
   
-  /* EXPLICITLY SET MARGENER FOR THIS BREAKPOINT */
   .margener {
     width: 95% !important;
   }
@@ -2234,21 +2093,48 @@ footer {
   }
   
   .overlay h1 {
-    font-size: 2rem;
+    font-size: var(--font-size-heading-md);
   }
-  
-  .overlay p1 {
-    font-size: 1rem;
+
+  .overlay p {
+    font-size: var(--font-size-xl);
   }
-  
+
   .card,
   .team-card {
     flex: 0 0 95%;
+    margin: 0;
   }
   
   .team-carousel {
     width: 95%;
     max-width: 350px;
+  }
+  
+  .slide h2 {
+    font-size: var(--font-size-heading-xl);
+  }
+  
+  .slide h3 {
+    font-size: var(--font-size-heading-sm);
+  }
+  
+  .slide p {
+    font-size: var(--font-size-lg);
+  }
+
+  #quehacemos-intro .image-column {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #quehacemos-intro .image-column img {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .overlay p1 {
+    font-size: 1rem;
   }
   
   .card2 {
@@ -2276,16 +2162,105 @@ footer {
     height: 120px;
   }
   
-  /* Compact accordion */
+  /* Accordion small mobile adjustments */
   .accordion-header {
     padding: 12px 14px;
-    font-size: var(--font-size-md);
   }
   
   .accordion-text p,
   .accordion-text li {
-    font-size: var(--font-size-md);
+    font-size: calc(var(--font-size-lg) * 0.95);
+    line-height: 1.7;
+  }
+  
+  .accordion-panel {
+    padding: 0 10px !important;
+  }
+  
+  .accordion-item.active .accordion-panel {
+    padding: 12px 10px 16px !important;
+  }
+  
+  .accordion-text,
+  .text-column {
+    width: calc(100% - 2px) !important;
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+  
+  .accordion-text p,
+  .accordion-text li {
+    padding-right: 1px;
+  }
+  
+
+  
+  .accordion-text ul {
+    margin-left: 1rem;
+    padding-right: 8px;
+  }
+  
+  .linkedin-link {
+    width: 100%;
+    text-align: center;
+    padding: 10px 16px;
+    box-sizing: border-box;
+  }
+  
+  /* Compact accordion */
+  .accordion-header {
+    padding: 12px 14px;
+  }
+  
+  .accordion-text p,
+  .accordion-text li {
     line-height: 1.4;
+  }
+  
+  /* Image Carousel small mobile */
+  .main-display {
+    height: 300px;
+  }
+  
+  .overlay-content {
+    padding: 20px;
+  }
+  
+  .overlay-title {
+    font-size: 1.25em;
+  }
+  
+  .overlay-description {
+    font-size: 0.9em;
+  }
+  
+  .thumbnail-slide {
+    width: 120px;
+    height: 80px;
+  }
+  
+  /* Contact small mobile */
+  .contact-form-column,
+  .contact-info-column {
+    padding: 0 10px;
+  }
+  
+  .form-card,
+  .info-card {
+    padding: 20px 15px;
+    border-radius: 6px;
+  }
+  
+  .contact-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .contact-intro {
+    font-size: 0.95rem;
+  }
+  
+  .map-wrapper {
+    height: 200px;
   }
   
   /* Reduce hero overlay padding */
@@ -2312,7 +2287,6 @@ footer {
   .form-group textarea,
   .form-group select {
     padding: 10px 12px;
-    font-size: var(--font-size-base);
   }
   
   /* Reduce slide padding more */
@@ -2326,6 +2300,14 @@ footer {
   }
 }
 
+/* Small Mobile (360px to 479px) */
+@media (max-width: 479px) {
+  .cards-container2 {
+    gap: 10px;
+    padding: 10px;
+  }
+}
+
 /* Extra Small Mobile (below 360px) */
 @media (max-width: 359px) {
   :root {
@@ -2333,14 +2315,12 @@ footer {
     --font-size-hero: 1.8rem;
     --font-size-heading-lg: 1.4rem;
     --font-size-subheading-lg: 1.2rem;
-    --font-size-xxl: 1rem;
     --font-size-xl: 0.95rem;
     --font-size-lg: 0.85rem;
-    --font-size-md: 0.8rem;
+    
     --font-size-base: 0.75rem;
   }
   
-  /* EXPLICITLY SET MARGENER FOR THIS BREAKPOINT */
   .margener {
     width: 98% !important;
   }
@@ -2415,8 +2395,6 @@ footer {
 
 
 
-
-
 /* ========== FONT SIZE OVERRIDES FOR SPECIFIC ELEMENTS ========== */
 
 /* Ensure all text elements use the responsive variables */
@@ -2429,7 +2407,7 @@ footer {
 }
 
 .slide h4 {
-  font-size: var(--font-size-xxl);
+  font-size: var(--font-size-heading-md);
 }
 
 .slide p,
@@ -2837,21 +2815,6 @@ footer {
 
 
 /* Responsive */
-@media (max-width: 1024px) {
-  .card2 {
-    grid-template-columns: 120px 1fr;
-    padding: 1.75rem;
-    gap: 1.75rem;
-  }
-  
-  .card2 img {
-    height: 120px;
-  }
-  
-  .card2-title {
-    font-size: 1.5rem;
-  }
-}
 
 @media (max-width: 768px) {
   .card2 {
@@ -2929,7 +2892,7 @@ footer {
 
 .accordion-text.quehacemos-content .linkedin-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);
+
 }
 
 /* ===== MOBILE RESPONSIVE ===== */
@@ -3242,6 +3205,10 @@ footer {
   transition: transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1),
               opacity 0.8s ease;
   will-change: transform, opacity;
+}
+.accordion-item.active .image-column img {
+    transform: translateX(0);
+    opacity: 1;
 }
 
 /* When visible (you'll add a class via JavaScript) */
